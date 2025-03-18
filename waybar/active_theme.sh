@@ -1,1 +1,0 @@
-~/.config/waybar/temas/default/config.sh
