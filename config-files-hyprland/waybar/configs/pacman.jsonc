@@ -1,0 +1,41 @@
+// -*- mode: jsonc -*-
+[{
+    "height": 10,       // Grosor de la barra 
+    "layer": "top",
+    //"mode": "dock",
+    "exclusive": true,
+    "passthrough": false,
+    "position": "top",
+    "spacing": 3,
+    "fixed-center": true,
+    "ipc": true,
+    "width": 0,
+    "margin-top": 3,
+    "margin-left": -5,
+    "margin-right": -5,
+
+    "modules-left": [
+        "hyprland/workspaces#pacman",
+        "custom/separator_line",
+        "clock",
+        "cpu",
+        "temperature",
+        "memory",
+        "custom/cava_mviz"
+   ],
+   "modules-center": [
+        "custom/playerctl-prev",
+        "custom/playerctl-info",
+        "custom/playerctl-next"
+   ],
+   "modules-right": [
+        "network",
+        "custom/disk-used-percentage",
+        "pulseaudio",                  // Volumen
+        "backlight",                   // Brillo
+        "battery",                     // Batería
+        "tray"                        // Applets
+   ],
+
+    "include": "~/.config/waybar/modules/modules.jsonc", // Include modules from another file
+}]

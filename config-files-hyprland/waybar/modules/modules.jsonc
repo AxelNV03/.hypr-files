@@ -1,0 +1,406 @@
+{
+    //////////////////////////////////////
+    //        WORKSPACES INDICATOR      //
+    //////////////////////////////////////
+
+     // CIRCLES Style
+    "hyprland/workspaces": {
+        "active-only": false,
+        "all-outputs": true,
+        "format": "{icon}",
+        "show-special": false,
+        "on-click": "activate",
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1",
+        "persistent-workspaces": {
+        "*": 5
+        },
+        "format-icons": {
+            "active": "",
+            "default": "",
+        },
+    },
+    // ROMAN Numerals style
+    "hyprland/workspaces#roman": {
+        "active-only": false,
+        "all-outputs": true,
+        "format": "{icon}",
+        "show-special": false,
+        "on-click": "activate",
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1",
+        "persistent-workspaces": {
+        "*": 5
+        },
+        "format-icons": {
+            "1": "I",
+            "2": "II",
+            "3": "III",
+            "4": "IV",
+            "5": "V",
+            "6": "VI",
+            "7": "VII",
+            "8": "VIII",
+            "9": "IX",
+            "10": "X",
+        },
+    },
+    // PACMAN Style
+    "hyprland/workspaces#pacman": {
+        "active-only": false,
+        "all-outputs": true,
+        "format": "{icon}",
+        "on-click": "activate",
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1",
+        "show-special": true,
+        "persistent-workspaces": {
+        "*": 5
+        },
+        "format": "{icon}",
+        "format-icons": {
+                "active": "<span font='12'>󰮯</span>",
+                "empty": "<span font='8'></span>",
+                "default": "󰊠",
+        },
+    },
+    // Kanji / Japanese style
+    "hyprland/workspaces#kanji": {
+        "disable-scroll": true,
+        "show-special": false,
+        "all-outputs": true,
+        "format": "{icon}",
+        "persistent-workspaces": {
+        "*": 5
+        },
+        "format-icons": {
+            "1": "一",
+            "2": "二",
+            "3": "三",
+            "4": "四",
+            "5": "五",
+            "6": "六",
+            "7": "七",
+            "8": "八",
+            "9": "九",
+            "10": "十",
+        }
+    },
+    // for Camilla or Spanish
+    "hyprland/workspaces#cam": {
+        "active-only":false,
+        "all-outputs": true,
+        "format": "{icon}",
+        "show-special": false,
+        "on-click": "activate",
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1",
+        "persistent-workspaces": {
+        "*": 5
+        },
+            "format-icons": {
+            "1": "Uno",
+            "2": "Due",
+            "3": "Tre",
+            "4": "Quattro",
+            "5": "Cinque",
+            "6":"Sei",
+            "7":"Sette",
+            "8":"Otto",
+            "9":"Nove",
+            "10":"Dieci"
+        }	
+    },   
+    //  NUMBERS and ICONS style
+    "hyprland/workspaces#4": {
+        "format": "{name}",
+        "format": " {name} {icon} ",
+        //"format": " {icon} ",
+        "show-special": false,
+        "on-click": "activate",
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1",
+        "all-outputs": true,
+        "sort-by-number": true,
+        "format-icons": {
+            "1": " ",
+            "2": " ",
+            "3": " ",
+            "4": " ",
+            "5": " ",
+            "6": " ",
+            "7": "",
+            "8": " ",
+            "9": "",
+            "10": "10",
+            "focused": "",
+            "default": "",
+        },
+    },
+    // NUMBERS and ICONS style with window rewrite 
+    "hyprland/workspaces#rw": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "warp-on-scroll": false,
+        "sort-by-number": true,
+        "show-special": false,
+        "on-click": "activate",
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1",
+        "format": "{icon} {windows}",
+        "format-window-separator": " ",
+        "window-rewrite-default": " ",
+        "window-rewrite": {
+            "title<.*youtube.*>": " ",
+            "title<.*amazon.*>": " ",
+            "title<.*reddit.*>": " ",
+            "title<.*Picture-in-Picture.*>": " ",
+            "class<firefox|org.mozilla.firefox|librewolf|floorp|mercury-browser>": " ",
+            "class<kitty|konsole>": " ",
+            "class<kitty-dropterm>": " ",
+            "class<Chromium|Thorium>": " ",
+            "class<org.telegram.desktop|io.github.tdesktop_x64.TDesktop>": " ",
+            "class<[Ss]potify>": " ",
+            "class<VSCode|code-url-handler|code-oss|codium|codium-url-handler|VSCodium>": "󰨞 ",
+            "class<thunar>": "󰝰 ",
+            "class<[Tt]hunderbird|[Tt]hunderbird-esr>": " ",
+            "class<discord|[Ww]ebcord|Vesktop>": " ",
+            "class<subl>": "󰅳 ",
+            "class<mpv>": " ",
+            "class<celluloid|Zoom>": " ",
+            "class<Cider>": "󰎆 ",
+            "class<virt-manager>": " ",
+            "class<codeblocks>": "󰅩 ",
+            "class<mousepad>": " ",
+            "class<libreoffice-writer>": " ",
+            "class<libreoffice-startcenter>": "󰏆 ",
+            "class<com.obsproject.Studio>": " ",
+            "class<polkit-gnome-authentication-agent-1>": "󰒃 ",
+            "class<nwg-look>": " ",
+            "class<zen-alpha>": "󰰷 ", //Zen Browser
+            "class<waterfox|waterfox-bin>": " ",
+            "class<microsoft-edge>": " ",
+            "class<vlc>": "󰕼 "
+            }   
+	},
+    ////////////////////////////
+    //     DEFAULT MODULES    //
+    ////////////////////////////
+     "idle_inhibitor": { // previene que se apague la screen
+         "format": "{icon}",
+         "format-icons": {
+             "activated": "",
+             "deactivated": ""
+         }
+     },
+     "tray": { //applets
+         // "icon-size": 21,
+         "spacing": 10
+     },
+     "clock": {
+         "interval": 1,
+         // "format": " {:%I:%M %p}", // AM PM format
+         "format": "  {:%H:%M:%S}", // 24H
+         "format-alt": "  {:%H:%M   %Y, %d %B, %A}",
+         "tooltip-format": "<tt><small>{calendar}</small></tt>",
+         "calendar": {
+             "mode": "year",
+             "mode-mon-col": 3,
+             "weeks-pos": "right",
+             "on-scroll": 1,
+             "format": {
+                 "months": "<span color='#ffead3'><b>{}</b></span>",
+                 "days": "<span color='#ecc6d9'><b>{}</b></span>",
+                 "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+                 "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+                 "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+             }
+         }
+     },
+     "cpu": {
+        "format": "{usage}% 󰍛",
+        "interval": 1,
+        "min-length": 5,
+        "format-alt-click": "click",
+        "format-alt": "{icon0}{icon1}{icon2}{icon3} {usage:>2}% 󰍛",
+        "format-icons": [
+            "▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"
+        ],
+        "on-click-right": "gnome-system-monitor",
+    },
+     "memory": {
+         "format": "{}% "
+     },
+
+     "temperature": {
+         "interval": 10,
+         "tooltip": true,
+         "hwmon-path": [
+             "/sys/class/hwmon/hwmon1/temp1_input",
+             "/sys/class/thermal/thermal_zone0/temp"
+         ],
+         //"thermal-zone": 0,
+         "critical-threshold": 82,
+         "format-critical": "{temperatureC}°C {icon}",
+         "format": "{temperatureC}°C {icon}",
+         "format-icons": [
+             "󰈸"
+         ],
+         "on-click-right": "kitty --title nvtop sh -c 'nvtop'"
+     },
+     
+     "backlight": {
+         // "device": "acpi_video1",
+         "format": "{percent}% {icon}",
+         "format-icons": ["", "", "", "", "", "", "", "", ""]
+     },
+     "battery": {
+         "states": {
+             // "good": 95,
+             "warning": 30,
+             "critical": 15
+         },
+         "interval" :1,
+         "format": "{capacity}% {icon}",
+         "format-full": "{capacity}% {icon}",
+         "format-charging": "{capacity}% ",
+         "format-plugged": "{capacity}% ",
+         "format-alt": "{time} {icon}",
+         // "format-good": "", // An empty format will hide the module
+         // "format-full": "",
+         "format-icons": ["", "", "", "", ""]
+     },
+    "pulseaudio": {
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-bluetooth-muted": " {icon}",
+        "format-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+    },
+    "custom/power": {
+         "format" : "⏻ ",
+           "tooltip": false,
+           "menu": "on-click",
+           "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
+           "menu-actions": {
+                "shutdown": "shutdown",
+                "reboot": "reboot",
+                "suspend": "systemctl suspend",
+                "hibernate": "systemctl hibernate"
+           }
+     },
+    ////////////////////////////
+    //      CUSTOM MODULES    //
+    ////////////////////////////
+    "custom/cava_mviz": {
+    	"exec": "~/.config/hypr/scripts/cava.sh",
+    	"format": "{}"
+    },
+    "custom/lock": {
+    	"format": "󰌾",
+    	"on-click": "~/.config/hypr/scripts/lockscreen.sh",
+    	"tooltip": true,
+    	"tooltip-format": "󰷛 Screen Lock",
+    },
+    "network": {
+        //"interval": 5,
+        "format": "{icon} {essid} {signalStrength}%",
+        "format-wifi": "{icon} {essid} {signalStrength}%",
+        "format-ethernet": "󰌘 {ifname}",
+        "format-disconnected": "󰌙 No conectado",
+        "tooltip-format": "IP: {ipaddr}",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "on-click-right": "notify-send 'Dirección IP' \"$(ip -4 addr show | grep -oP '(?<=inet\\s)\\d+(\\.\\d+){3}')\"",
+        "min-length": 24,
+        "max-length": 24,
+        "format-icons": [
+            "󰤯", "󰤟", "󰤢", "󰤥", "󰤨"
+        ],
+        "format-wifi": "{icon} {essid} {signalStrength}% - {ifname}",
+        "format-ethernet": "󰌘 {ifname} - {ifname}"
+    },
+    "custom/playerctl-prev": {
+        "format": "⏮",
+        "on-click": "playerctl previous",
+        "tooltip": false
+    },
+    "custom/playerctl-info": {
+        "exec": "playerctl metadata --format '{{ title }}' 2>/dev/null || echo 'No media'",
+        "interval": 1,
+        "format": "{}",
+        "on-click-middle": "playerctl play-pause",
+        "tooltip": false
+    },
+    "custom/playerctl-next": {
+        "format": "⏭",
+        "on-click": "playerctl next",
+        "tooltip": false
+    },
+    "custom/disk-total": {
+        "exec": "lsblk -o NAME,SIZE | grep nvme0n1p5 | awk '{print $2}'",
+        "interval": 60,
+        "format": " {} 🖴",
+        "tooltip": "Espacio total del disco"
+    },
+    "custom/disk-used": {
+        "exec": "df -h | grep '/dev/nvme0n1p5' | awk '{print $3}'",
+        "interval": 30,
+        "format": " {} 🖴",
+        "tooltip": "Espacio usado en el disco"
+    },
+    "custom/disk-available": {
+        "exec": "df -h | grep '/dev/nvme0n1p5' | awk '{print $4}'",
+        "interval": 30,
+        "format": " {} 🖴",
+        "tooltip": "Espacio disponible en el disco"
+    },
+    "custom/disk-used-percentage": {
+        "exec": "df -h | grep '/dev/nvme0n1p5' | awk '{print $5}'",
+        "interval": 30,
+        "format": " {} 🖴",
+        "tooltip": "Porcentaje de espacio usado en el disco"
+    },
+    ////////////////////////////
+    //        SEPARATORS      //
+    ////////////////////////////
+    "custom/separator#dot": {
+        "format": "",
+        "interval": "once",
+        "tooltip": false
+    },
+    "custom/separator#dot-line": {
+        "format": "",
+        "interval": "once",
+        "tooltip": false
+    },
+    "custom/separator_line": {
+        "format": " ",
+        "interval": "once",
+        "tooltip": false,
+        "color": "#ffcc66"
+    },
+    "custom/separator#blank": {
+        "format": "",
+        "interval": "once",
+        "tooltip": false
+    },
+    "custom/separator#blank_2": {
+        "format": "  ",
+        "interval": "once",
+        "tooltip": false
+    },
+    "custom/separator#blank_3": {
+        "format": "   ",
+        "interval": "once",
+        "tooltip": false
+    },
+ }

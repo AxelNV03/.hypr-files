@@ -1,0 +1,19 @@
+Aplicaciones Utilizadas
+    1. Waybar
+    2. Git
+    3. Gammastep
+    4. Tidal-hifi-bin
+    5. Whatsapp-nativefier
+        sudo chmod g=rx /opt/whatsapp-nativefier
+        sudo chmod o=rx /opt/whatsapp-nativefier
+    
+    6. Kde-Connect
+    5. sudo pacman -S brightnessctl
+    7. sudo pacman -S cups (IMPRESION)
+    8. sudo pacman -S ghostscript (PDF PRINT)
+    9. sudo pacman -S swaync (Notifys)
+    10. Hyprpaper
+    11. sudo pacman -S ntfs-3g (Para montar Windows)
+
+    #Cambia temas
+    kitty +list-fonts
