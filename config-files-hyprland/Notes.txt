@@ -1,19 +1,37 @@
-Aplicaciones Utilizadas
-    1. Waybar
-    2. Git
-    3. Gammastep
-    4. Tidal-hifi-bin
-    5. Whatsapp-nativefier
-        sudo chmod g=rx /opt/whatsapp-nativefier
-        sudo chmod o=rx /opt/whatsapp-nativefier
-    
-    6. Kde-Connect
-    5. sudo pacman -S brightnessctl
-    7. sudo pacman -S cups (IMPRESION)
-    8. sudo pacman -S ghostscript (PDF PRINT)
-    9. sudo pacman -S swaync (Notifys)
-    10. Hyprpaper
-    11. sudo pacman -S ntfs-3g (Para montar Windows)
+WAYBAR
+-------------------------------------------------------------
+git                 --> para clonar
+kitty               --> para el terminal, luego borras foot
+brave-bin           --> Navegador por  defecto
+rofi                --> sirve para mostrar las apps
+code                --> IDE desarrollo
+waybar              --> Barra de arriba
+cava                --> Visualizador de musica
+playerctl           --> controlador de multimedia
+Gammastep           --> Luz Azul
+brightnessctl       --> Brillo
+swaync              --> Notificaciones
+Hyprpaper           --> Fondo Pantalla
+hyprlock            --> Pantalla de bloqueo
+ntfs-3g             --> Montar Windows
+                        sudo mkdir -p /mnt/windows
+                        sudo mount -t ntfs-3g /dev/nvme0n1p3 /mnt/windows
 
-    #Cambia temas
-    kitty +list-fonts
+
+NOTA: Instalar nerd-fonts, noto-fonts-emoji y ttf-font-awesome
+para poder visualizar los iconos de la barra
+
+
+
+APPS PARA DIARIO Y ESCUELA
+-------------------------------------------------------------
+whatsapp nativefier --> Mensajes
+Discord             --> Para novelas
+nvim                --> Falta practica
+whatsapp            --> Mensajes
+                        sudo chmod g=rx /opt/whatsapp-nativefier
+                        sudo chmod o=rx /opt/whatsapp-nativefier
+Planify             --> Lista de tareas
+Onesnook            --> Notas
+
+kdeconnect-cli --share path -n "nv"
