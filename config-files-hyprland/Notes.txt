@@ -33,3 +33,5 @@ whatsapp            --> Mensajes
                         sudo chmod o=rx /opt/whatsapp-nativefier
 Planify             --> Lista de tareas
 Onesnook            --> Notas
+kdeconnect          --> Pasar Files
+Vbox
