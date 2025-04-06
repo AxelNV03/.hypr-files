@@ -1,0 +1,46 @@
+WAYBAR
+-------------------------------------------------------------
+git                 --> para clonar
+kitty               --> para el terminal, luego borras foot
+brave-bin           --> Navegador por  defecto
+rofi                --> sirve para mostrar las apps
+code                --> IDE desarrollo
+waybar              --> Barra de arriba
+cava                --> Visualizador de musica
+playerctl           --> controlador de multimedia
+Gammastep           --> Luz Azul
+brightnessctl       --> Brillo
+swaync              --> Notificaciones
+Hyprpaper           --> Fondo Pantalla
+hyprlock            --> Pantalla de bloqueo
+ntfs-3g             --> Montar Windows
+                        sudo mkdir -p /mnt/windows
+                        sudo mount -t ntfs-3g /dev/nvme0n1p3 /mnt/windows
+
+
+NOTA: Instalar nerd-fonts, noto-fonts-emoji y ttf-font-awesome
+para poder visualizar los iconos de la barra
+
+
+
+APPS PARA DIARIO
+-------------------------------------------------------------
+whatsapp nativefier --> Mensajes
+Discord             --> Para novelas
+nvim                --> Falta practica
+whatsapp            --> Mensajes
+                        sudo chmod g=rx /opt/whatsapp-nativefier
+                        sudo chmod o=rx /opt/whatsapp-nativefier
+Planify             --> Lista de tareas
+Onesnook            --> Notas
+<<<<<<< HEAD
+kdeconnect          --> Pasar Files
+Vbox
+=======
+
+
+APPS PARA ESCUELA
+--------------------------------------------------------------
+vscode              --> IDE
+nvim                --> Practice
+>>>>>>> 5443fe0 (Resuelto conflicto al integrar cambios remotos)
