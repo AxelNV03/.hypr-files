@@ -33,14 +33,13 @@ whatsapp            --> Mensajes
                         sudo chmod o=rx /opt/whatsapp-nativefier
 Planify             --> Lista de tareas
 Onesnook            --> Notas
-<<<<<<< HEAD
 kdeconnect          --> Pasar Files
-Vbox
-=======
+planify             --> Gestor de tareas
+                        yay -S gxml --mflags "--nocheck"
+                        yay planify
 
 
 APPS PARA ESCUELA
 --------------------------------------------------------------
 vscode              --> IDE
 nvim                --> Practice
->>>>>>> 5443fe0 (Resuelto conflicto al integrar cambios remotos)
