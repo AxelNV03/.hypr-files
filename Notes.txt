@@ -36,9 +36,7 @@ whatsapp            --> Mensajes
 Planify             --> Lista de tareas
 Onesnook            --> Notas
 kdeconnect          --> Pasar Files
-planify             --> Gestor de tareas
-                        yay -S gxml --mflags "--nocheck"
-                        yay planify
+wayvnc              --> Visor Remoto VNC
 
 
 APPS PARA ESCUELA

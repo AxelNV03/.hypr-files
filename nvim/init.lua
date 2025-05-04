@@ -7,7 +7,7 @@ require("plugins")
 require("settings")
 
 -- 3. Cargar atajos de teclado
--- require("keymaps")
+require("keymaps")
 
 -- 4. Cargar automáticamente todas las configuraciones de plugins
 local plugin_configs = vim.fn.glob("~/.config/nvim/lua/plugin-configs/*.lua")
