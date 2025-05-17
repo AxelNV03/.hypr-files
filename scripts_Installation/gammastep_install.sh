@@ -3,8 +3,12 @@
 # Instala Gammastep
 yay -S --noconfirm gammastep
 
+# Borra el directorio de configuración si existe
+if [ -d ~/.config/gammastep ]; then
+    rm -rf ~/.config/gammastep
+fi
 
-# Copia el archivo de configuración
+# crea el directorio de configuración
 mkdir -p ~/.config/gammastep
 
 # Crea un enlace simbólico al archivo de configuración
