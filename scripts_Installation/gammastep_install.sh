@@ -8,7 +8,7 @@ yay -S --noconfirm gammastep
 mkdir -p ~/.config/gammastep
 
 # Crea un enlace simbólico al archivo de configuración
-ln -sf ~/Hyprland-conf/gammastep/gammastep.conf ~/.config/gammastep/gammastep.conf
+ln -sf ~/Hyprland-conf/gammastep/ ~/.config/gammastep/
 
 
 
