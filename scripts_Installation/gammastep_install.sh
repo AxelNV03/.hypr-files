@@ -5,7 +5,7 @@ yay -S --noconfirm gammastep
 
 # Borra el directorio de configuración si existe
 if [ -d ~/.config/gammastep ]; then
-    rm -rf ~/.config/gammastep
+    rm -rf ~/.config/gammastep > /dev/null 2>&1
 fi
 
 # crea el directorio de configuración
