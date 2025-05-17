@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Instala Gammastep
-yay -S --noconfirm gammastep
+yay -S --noconfirm gammastep > /dev/null 2>&1
 
 # Rutas
 SOURCE=~/Hyprland-conf/gammastep
