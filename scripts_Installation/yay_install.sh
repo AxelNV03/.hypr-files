@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 # Clona el repositorio de yay
 git clone https://aur.archlinux.org/yay.git

@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 # Instala la fuente de ttf-font
 yay -S --noconfirm ttf-font

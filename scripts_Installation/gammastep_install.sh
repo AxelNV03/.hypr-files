@@ -1,18 +1,17 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 # Instala Gammastep
 yay -S --noconfirm gammastep
 
-# Borra el directorio de configuración si existe
-if [ -d ~/.config/gammastep ]; then
-    rm -rf ~/.config/gammastep > /dev/null 2>&1
-fi
+# Rutas
+SOURCE=~/Hyprland-conf/gammastep
+DEST=~/.config/gammastep
 
-# crea el directorio de configuración
-mkdir -p ~/.config/gammastep
+# Elimina cualquier configuración previa (carpeta o symlink)
+[ -e "$DEST" ] && rm -rf "$DEST"
 
-# Crea un enlace simbólico al archivo de configuración
-ln -sf ~/Hyprland-conf/gammastep/ ~/.config/gammastep/
+# Crea el enlace simbólico
+ln -s "$SOURCE" "$DEST"
 
-
-
+# Mensaje final
+echo "✔️ Gammastep se ha instalado y configurado correctamente."
