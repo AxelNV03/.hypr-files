@@ -20,7 +20,7 @@
         "tooltip": false
     },
     "custom/playerctl-info": {
-        "exec": "playerctl metadata --format '{{ title }}' 2>/dev/null || echo 'No media'",
+        "exec": "playerctl metadata --format '{{ title }}' 2>/dev/null | cut -c1-30 || echo 'No media'",
         "interval": 1,
         "format": "{}",
         "on-click-middle": "playerctl play-pause",
