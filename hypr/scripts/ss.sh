@@ -1,9 +1,6 @@
 #!/bin/bash
 # Script para capturar un área de la pantalla con grim y slurp
 
-# Crear el directorio ~/Media/ss si no existe
-mkdir -p ~/Media/ss
-
 # Seleccionar un área de la pantalla usando slurp
 area=$(slurp)
 
