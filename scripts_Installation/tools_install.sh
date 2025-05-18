@@ -7,10 +7,10 @@ set -e
 trap 'echo "❌ Ocurrió un error durante la instalación."' ERR
 
 # Mensaje de inicio
-echo -e "\nInstalando y configurando Vscode..."
+echo -e "\nInstalando y configurando herramientas..."
 
 # Instalación de dependencias
-yay -S --noconfirm visual-studio-code-bin > /dev/null 2>&1
+sudo pacman -S --noconfirm --needed cava playerctl brightnessctl > /dev/null 2>&1
 
 # Mensaje de éxito
-echo "✅ Vscode instalado y configurado correctamente."
+echo "✅ Herramientas instaladas y configuradas correctamente."
