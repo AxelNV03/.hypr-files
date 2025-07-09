@@ -1,0 +1,13 @@
+1. Agregar Emojis
+
+2. Activar el portapapeles de Nvim al del sistema
+
+3. Activar el cambio de ventanas 
+
+4. Activar el blur y la opacidad de las ventanas (Kitty tamien)
+
+5. Imagen al portapapeles despues de captura
+
+6. Opciones de Compartir pantalla
+
+
