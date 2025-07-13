@@ -1,16 +1,8 @@
 {
     // Espectro del Audio
     "custom/cava_mviz": {
-    	"exec": "~/.config/hypr/scripts/cava.sh",
-    	"format": "{}"
-    },
-
-    // Bloqueo de pantalla
-    "custom/lock": {
-    	"format": "󰌾",
-    	"on-click": "~/.config/hypr/scripts/lockscreen.sh",
-    	"tooltip": true,
-    	"tooltip-format": "󰷛 Screen Lock"
+        "exec": "~/.config/hypr/scripts/cava.sh",
+        "format": "{}"
     },
 
     // Audio Control
@@ -20,12 +12,13 @@
         "tooltip": false
     },
     "custom/playerctl-info": {
-        "exec": "playerctl metadata --format '{{ title }}' 2>/dev/null | cut -c1-30 || echo 'No media'",
+        "exec": "title=$(playerctl metadata --format '{{ title }}' 2>/dev/null); [ ${#title} -gt 30 ] && echo \"${title:0:30}...\" || echo \"$title\" || echo 'No media'",
         "interval": 1,
         "format": "{}",
         "on-click-middle": "playerctl play-pause",
         "tooltip": false
     },
+
     "custom/playerctl-next": {
         "format": "⏭",
         "on-click": "playerctl next",

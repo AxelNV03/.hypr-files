@@ -45,3 +45,7 @@ vscode              --> IDE
 nvim                --> Practice
 mariadb		    --> Base de Datos
 		       	mariadb-install-db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
+
+
+# /dev/nvme0n1p3
+UUID=1EC85ABDC85A933F  /mnt/windows  ntfs-3g  uid=1000,gid=1000,dmask=027,fmask=137,noatime,windows_names,user,rw,exec  0 0

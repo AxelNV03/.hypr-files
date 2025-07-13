@@ -32,6 +32,21 @@ sesion-hamachi(){
     sudo hamachi attach $1
 }
 
+red(){
+  sudo systemctl restart NetworkManager
+  nmcli device disconnect wlan0
+  nmcli device wifi hotspot ifname wlan0 band a ssid "$1" password "$2"
+}
+
+red() {
+  if [ $# -ne 2 ]; then
+    echo "Uso: red SSID contraseña"
+    return 1
+  fi
+  sudo systemctl restart NetworkManager && \
+  nmcli device disconnect wlan0 && \
+  nmcli device wifi hotspot ifname wlan0 band a ssid "$1" password "$2"
+}
 
 
 

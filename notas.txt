@@ -1,0 +1,13 @@
+
+# Como sincronizar KDEwallet con Hyprlan
+1. Abres el .desktop de tu sistema (local: nano ~/.local/share/applications/brave-browser.desktop)
+    sudo nano /usr/share/applications/brave-browser.desktop
+
+2. Cambias Exec=brave-browser %U por
+    Exec=env XDG_CURRENT_DESKTOP=KDE XDG_SESSION_DESKTOP=KDE brave --password-store=kwallet6 %U
+
+
+yay -S tty-clock                --> Reloj digital gigante
+                                    tty-clock -c -s -C 6
+KeePassXC                       --> Es un gestor de contraseñas que puede sustituir a plasma, sirve para guardar sesiones de Brave por ejemplo
+
