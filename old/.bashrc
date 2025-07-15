@@ -15,6 +15,9 @@ alias startdb='sudo systemctl start mariadb'
 alias java8='sudo archlinux-java set java-8-openjdk'
 alias java21='sudo archlinux-java set java-21-openjdk'
 
+
+#Kitty + kitten icat $1
+# tty-clock -c -s -C 6
 # Alias para buscar dentro de archivos (contenido)
 alias searchonfiles='grep -riwl'
 

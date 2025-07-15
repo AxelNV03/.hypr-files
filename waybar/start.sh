@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Ruta base de temas
-DIR="$HOME/.hypr-files/waybar/themes"
+DIR="$HOME/.config/waybar/themes"
 
 # Verifica que el archivo del tema actual existe
 THEME_FILE="$DIR/actual_theme.txt"

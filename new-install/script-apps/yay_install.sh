@@ -29,7 +29,7 @@ YAY_DIR="$(mktemp -d)/yay"
 # Clonar y compilar yay
 git clone "$YAY_REPO" "$YAY_DIR" > /dev/null 2>&1
 cd "$YAY_DIR" || exit 1
-makepkg -si --noconfirm > /dev/null 2>&1
+makepkg -si --noconfirm --needed> /dev/null 2>&1
 
 # Limpieza
 rm -rf -- "$YAY_DIR" > /dev/null 2>&1

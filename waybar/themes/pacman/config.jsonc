@@ -1,0 +1,39 @@
+// -*- mode: jsonc -*-
+[{
+     "height": 10,
+     "layer": "top",
+     "exclusive": true,
+     "passthrough": false,
+     "position": "top",
+     "spacing": 3,
+     "fixed-center": true,
+     "ipc": true,
+     "width": 0,
+     "margin-top": 3,
+     "margin-left": -5,
+     "margin-right": -5,
+
+     "modules-left": [
+          "hyprland/workspaces#pacman",
+          "custom/separator_line",
+          "clock",
+          "cpu",
+          "temperature",
+          "memory"
+     ],
+     "modules-center": [
+          "custom/playerctl-prev",
+          "custom/playerctl-info",
+          "custom/playerctl-next"
+     ],
+     "modules-right": [
+          "network",                      // Internet
+          "custom/disk-used-percentage",  // Uso de disco
+          "pulseaudio",                   // Volumen
+          "backlight",                    // Brillo
+          "battery",                      // Batería
+          "tray"                          // Applets
+     ],
+
+     "include": "$HOME/.config/waybar/themes/pacman/modules.jsonc"
+}]

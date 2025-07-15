@@ -10,7 +10,7 @@ trap 'echo "❌ Ocurrió un error durante la instalación."' ERR
 echo -e "\nInstalando Waybar..."
 
 # Instala las fuentes y emojis para Waybar
-yay -S --noconfirm waybar nerd-fonts noto-fonts-emoji ttf-font-awesome > /dev/null 2>&1
+yay -S --noconfirm --needed waybar nerd-fonts noto-fonts-emoji ttf-font-awesome > /dev/null 2>&1
 
 # Rutas
 SOURCE=~/.hypr-files/waybar

@@ -13,8 +13,8 @@ echo -e "\nInstalando Gammastep..."
 yay -S --noconfirm gammastep > /dev/null 2>&1
 
 # Rutas
-SOURCE=~/Hyprland-conf/gammastep
-DEST=~/.config/gammastep
+SOURCE=~/Hyprland-conf/gammastep/
+DEST=~/.config/
 
 # Elimina cualquier configuración previa (carpeta o symlink)
 [ -e "$DEST" ] && rm -rf "$DEST" > /dev/null 2>&1

@@ -1,0 +1,177 @@
+{
+    // Waybar modules configuration for Pacman theme
+    "hyprland/workspaces#pacman": {
+        "active-only": false,
+        "all-outputs": true,
+        "format": "{icon}",
+        "on-click": "activate",
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1",
+        "show-special": true,
+        "persistent-workspaces": {
+        "*": 5
+        },
+        "format-icons": {
+                "active": "<span font='12'>󰮯</span>",
+                "empty": "<span font='8'></span>",
+                "default": "󰊠"
+        }
+    },
+
+    // Separator line
+        "custom/separator_line": {
+        "format": " ",
+        "interval": "once",
+        "tooltip": false,
+        "color": "#ffcc66"
+    },
+
+    // Clock
+    "clock": {
+        "interval": 1,
+        "format": "  {:%H:%M:%S}", // 24H
+        "format-alt": "  {:%H:%M   %Y, %d %B, %A}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode": "year",
+            "mode-mon-col": 3,
+            "weeks-pos": "right",
+            "on-scroll": 1,
+            "format": {
+                "months": "<span color='#ffead3'><b>{}</b></span>",
+                "days": "<span color='#ecc6d9'><b>{}</b></span>",
+                "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+                "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+                "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
+        }
+    },
+
+    // CPU usage
+        "cpu": {
+        "format": "{usage}% 󰍛",
+        "interval": 1,
+        "min-length": 5,
+        "format-alt-click": "click",
+        "format-alt": "{icon0}{icon1}{icon2}{icon3} {usage:>2}% 󰍛",
+        "format-icons": [
+            "▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"
+        ],
+        "on-click-right": "gnome-system-monitor",
+    },
+
+    // Temperatura
+    "temperature": {
+        "interval": 10,
+        "tooltip": true,
+        "hwmon-path": [
+            "/sys/class/hwmon/hwmon1/temp1_input",
+            "/sys/class/thermal/thermal_zone0/temp"
+        ],
+        "critical-threshold": 82,
+        "format-critical": "{temperatureC}°C {icon}",
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": [
+            "󰈸"
+        ],
+        "on-click-right": "kitty --title nvtop sh -c 'nvtop'"
+    },
+
+    // Uso de Memoria RAM
+    "memory": {
+        "format": "{}% "
+    },
+
+    // Audio Control
+    "custom/playerctl-prev": {
+        "format": "⏮",
+        "on-click": "playerctl previous",
+        "tooltip": false
+    },
+    "custom/playerctl-info": {
+        "exec": "title=$(playerctl metadata --format '{{ title }}' 2>/dev/null); [ ${#title} -gt 30 ] && echo \"${title:0:30}...\" || echo \"$title\" || echo 'No media'",
+        "interval": 1,
+        "format": "{}",
+        "on-click-middle": "playerctl play-pause",
+        "tooltip": false
+    },
+
+    "custom/playerctl-next": {
+        "format": "⏭",
+        "on-click": "playerctl next",
+        "tooltip": false
+    },
+
+    // internet
+    "network": {
+        //"interval": 5,
+        "format": "{icon} {essid} {signalStrength}%",
+        // "format-wifi": "{icon} {essid} {signalStrength}%",
+        // "format-ethernet": "󰌘 {ifname}",
+        "format-wifi": "{icon} {essid} {signalStrength}% - {ifname}",
+        "format-ethernet": "󰌘 {ifname} - {ifname}",
+        "format-disconnected": "󰌙 No conectado",
+        "tooltip-format": "IP: {ipaddr}",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "on-click-right": "notify-send 'Dirección IP' \"$(ip -4 addr show | grep -oP '(?<=inet\\s)\\d+(\\.\\d+){3}')\"",
+        "min-length": 24,
+        "max-length": 24,
+        "format-icons": [
+            "󰤯", "󰤟", "󰤢", "󰤥", "󰤨"
+        ]
+    },
+
+    // Espacio utilizado (En %)
+    "custom/disk-used-percentage": {
+        "exec": "df -h | grep '/dev/nvme0n1p5' | awk '{print $5}'",
+        "interval": 30,
+        "format": " {} 🖴",
+        "tooltip": "Porcentaje de espacio usado en el disco"
+    },
+
+    // Nivel de Volumen
+    "pulseaudio": {
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-bluetooth-muted": " {icon}",
+        "format-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+    },
+
+    // Brillo
+    "backlight": {
+        "format": "{percent}% {icon}",
+        "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+
+     // Porcentaje de pila
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "interval" :1,
+        "format": "{capacity}% {icon}",
+        "format-full": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+
+    //applets
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+     }
+}

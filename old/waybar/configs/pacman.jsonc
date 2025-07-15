@@ -38,9 +38,9 @@
      ],
 
      "include": [
-          "~/.config/waybar/modules/customs.jsonc",
-          "~/.config/waybar/modules/separators.jsonc",
-          "~/.config/waybar/modules/system.jsonc",
-          "~/.config/waybar/modules/workspaces.jsonc"
+          "~/.hypr-files/old/waybar/modules/customs.jsonc",
+          "~/.hypr-files/old/waybar/modules/separators.jsonc",
+          "~/.hypr-files/old/waybar/modules/system.jsonc",
+          "~/.hypr-files/old/waybar/modules/workspaces.jsonc"
      ]
 }]
