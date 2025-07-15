@@ -33,6 +33,8 @@ red() {
         echo "$DISPOSITIVO no está conectado."
     fi
 
+    sleep 5
+
     # Crea el Hotspot Wi-Fi
     echo -e "\nCreando Hotspot con SSID '$1'..."
     nmcli device wifi hotspot ifname "$DISPOSITIVO" band a ssid "$1" password "$2" || {

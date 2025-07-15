@@ -168,7 +168,6 @@
         "format-alt": "{time} {icon}",
         "format-icons": ["", "", "", "", ""]
     },
-
     //applets
     "tray": {
         // "icon-size": 21,
