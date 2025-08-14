@@ -2,7 +2,10 @@
 # Este archivo se carga al iniciar Zsh
 
 # Inicia fastfetch
-fastfetch
+#fastfetch
+
+# Spotify en Consola
+export PATH="$HOME/.cargo/bin:$PATH"
 
 # Cargar alias.zsh desde el mismo directorio
 source "$HOME/.hypr-files/zsh/alias.zsh"

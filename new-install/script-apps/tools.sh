@@ -29,7 +29,7 @@ sudo pacman -Syu --noconfirm > /dev/null 2>&1
 BASE_PKGS="base-devel polkit polkit-gnome"  # Dependencias base y Polkit
 WAYLAND_PKGS="wayland xorg-xwayland qt5-wayland qt6-wayland xdg-utils xdg-user-dirs xdg-desktop-portal xdg-desktop-portal-hyprland"  # Soporte Wayland
 FONTS_PKGS="ttf-dejavu ttf-liberation ttf-jetbrains-mono ttf-font-awesome"  # Fuentes
-TOOLS_PKGS="thunar gvfs rofi brightnessctl wl-clipboard fastfetch htop btop ntfs-3g playerctl gammastep network-manager-applet"  # Herramientas y utilidades
+TOOLS_PKGS="thunar gvfs rofi brightnessctl wl-clipboard fastfetch htop btop ntfs-3g playerctl gammastep network-manager-applet hyprctl"  # Herramientas y utilidades
 
 # Combinar todos los paquetes
 ALL_PKGS="$BASE_PKGS $WAYLAND_PKGS $FONTS_PKGS $TOOLS_PKGS"

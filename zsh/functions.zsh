@@ -7,7 +7,7 @@ searchfile() {
 # Crear un Hotspot Wi-Fi
 # $1 = SSID, $2 = contraseña
 red() {    
-    DISPOSITIVO="wlp3s0"
+    DISPOSITIVO=$(nmcli device status | grep wifi | grep -v disconnected | awk '{print $1}' | head -n 1)
 
     # verifica que no haya argumentos vacíos
     if [ -z "$1" ] || [ -z "$2" ]; then
@@ -23,7 +23,7 @@ red() {
     }
 
     # Espera un momento para asegurarse de que el servicio esté activo
-    sleep 3
+    sleep 5
 
     # Verifica si el dispositivo está conectado a una red Wi-Fi
     if nmcli device status | grep -q "^$DISPOSITIVO *wifi *conectado"; then
