@@ -45,3 +45,66 @@ red() {
     echo "Hotspot creado correctamente."
 }
 
+# Funcion para cambiar de Rama en Git
+git_rama() {
+  if [ -z "$1" ]; then
+    echo "Uso: git_rama <nombre_de_rama>"
+    return 1
+  fi
+  git checkout "$1"
+}
+
+# Funcion para crear nueva rama
+git_nueva_rama() {
+  if [ -z "$1" ]; then
+    echo "Uso: git_nueva_rama <nombre_de_rama>"
+    return 1
+  fi
+  git checkout dev
+  git checkout -b "$1"
+  git push -u origin "$1"
+}
+
+# Funcion para hacer merge
+git_merge() {
+  if [ -z "$1" ] || [ -z "$2" ]; then
+    echo "Uso: git_merge <rama_origen> <rama_destino>"
+    return 1
+  fi
+  git checkout "$2" || return 1
+  git merge "$1"
+  if [ $? -eq 0 ]; then
+    git push origin "$2"
+    echo "Merge completado y push realizado."
+  else
+    echo "Hubo conflictos, resuélvelos antes de hacer push."
+  fi
+}
+
+# Commit rápido con mensaje
+git_commit() {
+  if [ -z "$1" ]; then
+    echo "Uso: git_commit <mensaje>"
+    return 1
+  fi
+  git commit -am "$1"
+}
+
+# Commit + push en la rama actual
+git_push() {
+  git add .
+  git commit -m "Auto-commit: $(date '+%Y-%m-%d %H:%M:%S')"
+  git push
+  echo "Push realizado en la rama $(git branch --show-current)."
+}
+
+# Pull de la rama actual
+git_pull() {
+  git pull origin $(git branch --show-current)
+}
+
+# restaurar commit 
+last_commit() {
+  git reset --hard HEAD~1
+  echo "Último commit eliminado y cambios borrados."
+}
