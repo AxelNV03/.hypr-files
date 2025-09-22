@@ -1,0 +1,41 @@
+ok para que funcione es 
+
+# Git
+git clone <sshRepo>
+gi switch <rama ft>
+
+# instalar dependencias
+php composer
+npm install
+
+# Copiar archivo de entorno
+cp .env.example .env
+
+# Generar key de la aplicación
+php artisan key:generate
+
+# Conf el .env para la db
+
+# correr migraciones
+rm database/migrations/permissions
+php artisan migrate
+
+# Semillar usuarios
+php artisan db:seed --class=RoleSeeder
+php artisan db:seed --class=UserSeeder
+
+y ya puedo correr, adicionalmente configurar el .env para mailtrap
+# Correr
+php artisan serve
+npm run dev
+
+# por si quier probar el mail
+php artisan config:clear
+php artisan cache:clear
+php artisan tinker
+
+// Enviar correo simple de prueba
+Mail::raw('¡Este es un correo de prueba desde PROTECMOR!', function($message) {
+    $message->to('test@example.com')
+            ->subject('✅ Prueba de Mailtrap funcionando');
+});

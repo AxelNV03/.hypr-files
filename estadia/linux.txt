@@ -1,0 +1,204 @@
+
+# Para traer lo que se ocupa para generar modelos
+composer require reliese/laravel --dev
+php artisan vendor:publish --provider="Reliese\Coders\CodersServiceProvider"
+php artisan code:models
+
+
+# Para ver los commits guardados
+git --no-pager log
+
+# Testear
+php artisan tinker
+
+# Instalar Spatie Laravel-Permission para controlar roles/usuarios:
+composer require spatie/laravel-permission
+php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider"
+php artisan migrate
+
+# Migraciones
+php artisan migrate:install   # si no existe la tabla migrations
+php artisan migrate:refresh   # si quieres resetear todo (cuidado)
+
+# Datos fake
+// Esto genera 10 profesores falsos con datos aleatorios
+Profesore::factory()->count(10)->create();
+
+// Esto genera 50 calificaciones falsas  
+Calificacione::factory()->count(50)->create();
+
+
+# -------------------------------------------------------------------------------------------
+📌 Roadmap sugerido (basado en tu proyecto Protecmor)
+1. Base de Autenticación
+
+✅ Login de usuarios (/login).
+
+✅ Registro no (porque en tu caso los alumnos se crean solo cuando el admin los activa, recuerda).
+
+✅ Recuperación de contraseña con token y envío de correo (/password/reset).
+
+Configuración de Mail (para que lleguen notificaciones y reseteos de contraseña).
+
+Middleware para separar accesos según roles:
+
+SuperAdmin (todo el sistema, incluidos admins).
+
+Admin (gestión de usuarios, clases, pagos, pero no de otros admins).
+
+Profesor (gestiona sus grupos, alumnos, materiales).
+
+Alumno (solo consulta).
+
+👉 Con esto ya tienes la columna vertebral de acceso al sistema.
+
+2. Panel inicial según rol
+
+Vista básica tipo dashboard para cada rol:
+
+SuperAdmin → métricas generales, control de admins.
+
+Admin → pagos, inscripciones, reportes.
+
+Profesor → clases, asistencia, calificaciones.
+
+Alumno → historial, calificaciones, materiales.
+
+(aunque sea algo sencillo, que ya redireccione al loguearse al panel correcto)
+
+3. Gestión Académica
+
+CRUD de grupos y campos formativos.
+
+CRUD de clases (conexión profesor ↔ grupo ↔ campo formativo).
+
+CRUD de calificaciones.
+
+CRUD de materiales / pase de lista.
+
+4. Módulo Administrativo
+
+Pagos manuales y control de estados (pendiente, pagado, atrasado).
+
+Notificaciones automáticas (correo + internas).
+
+Generación de reportes (Excel, PDF).
+
+Respaldo de BD.
+
+5. Front público (visitantes no registrados)
+
+Página de inicio (info institucional, certificaciones, talleres, catálogo de productos/eventos).
+
+Catálogo de eventos y productos → botón de contacto (WhatsApp).
+
+Formulario de solicitud de inscripción (que genera una entrada pendiente en el sistema).
+
+6. Extras
+
+Chat interno por clase.
+
+Calendario interactivo.
+
+Constancias automáticas para talleres.
+
+📌 Por qué empezar con login y recuperación antes que con el front público:
+
+Sin login y sin roles funcionando, no puedes probar los CRUD internos ni validar permisos.
+
+El front público es importante, pero no depende de la seguridad. En cambio, los paneles de usuario sí dependen del login.
+
+Además, una vez tengas login + dashboard, ya puedes enseñar un demo funcional (aunque no haya diseño aún).
+
+👉 Mi consejo: empieza ahora mismo con login + recover password + middleware de roles.
+Así ya tienes un sistema vivo, luego vas creciendo módulo por módulo.
+
+# ----------------------
+ROADMAP
+
+🛠 Roadmap Proyecto Protecmor en Laravel
+🔹 Fase 1: Preparación del entorno
+
+Instalar Laravel y configurar proyecto (laravel new protecmor o composer create-project).
+
+Configurar conexión a MySQL en .env.
+
+Instalar y configurar Spatie Laravel-Permission (roles y permisos).
+
+Instalar Breeze o Jetstream (para login / registro) → Breeze es más ligero.
+
+Configurar autenticación básica (users, roles, permissions).
+
+✅ Entregable: Sistema base con login funcional y roles definidos (Superadmin, Admin, Maestro, Alumno).
+
+🔹 Fase 2: Gestión de usuarios y roles
+
+CRUD de usuarios (Superadmin puede manejar admins, admins manejan alumnos/maestros).
+
+CRUD de alumnos, enlazado a users.
+
+CRUD de maestros, enlazado a users.
+
+CRUD de grupos.
+
+Relación Alumno–Grupo y Profesor–Grupo.
+
+✅ Entregable: Gestión completa de usuarios y grupos desde el panel.
+
+🔹 Fase 3: Gestión académica
+
+CRUD de campos formativos (materias/talleres).
+
+CRUD de clases (Admin crea, Maestro edita fechas, Alumno solo consulta).
+
+CRUD de materiales (subida de archivos, PDFs, Word, imágenes).
+
+CRUD de calificaciones (solo maestros asignan, alumnos consultan).
+
+CRUD de asistencias (subida manual o vía Excel).
+
+✅ Entregable: Gestión académica funcional (clases, materiales, calificaciones, asistencia).
+
+🔹 Fase 4: Módulos de apoyo
+
+Constancias (generación en PDF desde talleres).
+
+Eventos (con inscripción, público general o alumnos).
+
+Productos (catálogo simple con WhatsApp redirect).
+
+Pagos manuales (Admin los registra, alumnos consultan historial).
+
+Notificaciones:
+
+Internas (en la plataforma).
+
+Por correo (usando Laravel Notifications o Mail).
+
+✅ Entregable: Funcionalidades complementarias completas.
+
+🔹 Fase 5: Reportes y extras
+
+Reportes en Excel (con maatwebsite/excel).
+
+Reportes en PDF (con dompdf o snappy).
+
+Módulo de respaldo de base de datos.
+
+Validaciones y middleware de permisos.
+
+✅ Entregable: Sistema robusto con reportes e informes.
+
+🔹 Fase 6: Diseño y despliegue
+
+Interfaz con Blade + Tailwind/Bootstrap (según el enfoque).
+
+Diseño adaptado a colores institucionales (azul, naranja, rojo).
+
+Pruebas en entorno controlado.
+
+Despliegue en servidor Linux (puedes hacerlo en Apache o Nginx).
+
+Configuración de backups automáticos (Laravel Scheduler + cron).
+
+✅ Entregable: Sistema en producción.
