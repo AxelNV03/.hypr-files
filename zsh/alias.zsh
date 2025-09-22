@@ -14,9 +14,11 @@ alias clock='tty-clock -c -s -C 3'      # Reloj en la terminal
 alias system='sudo systemctl'           # Alias para systemctl
 alias wl='nmcli device wifi list'	# Alias para ver lista de wifi 
 alias wcon='nmcli device wifi connect'	# Alias para conectarse a una red wifi 
+alias gl='git --no-pager log --oneline --graph --decorate --all'  # Mejor vista de git log
+alias c='wl-copy' # Copiar al portapapeles
+alias rl='source ~/.zshrc' # Recargar configuración de zsh
 
 
 # Solo en thinkpad
 alias winM='sudo mount -t ntfs-3g /dev/nvme0n1p2 /mnt/windows -o uid=$(id -u),gid=$(id -g),umask=000'
 alias winD='cd /mnt/windows/Users/Axel/Downloads'
- 

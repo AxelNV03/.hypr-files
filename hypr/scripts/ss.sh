@@ -22,7 +22,7 @@
 # Script para capturar un área de la pantalla con grim y slurp
 
 # Definir la carpeta de destino
-DEST_DIR="$HOME/Media/ss"
+DEST_DIR="$HOME/Imágenes/capturas"
 
 # Crear la carpeta si no existe
 mkdir -p "$DEST_DIR" || { echo "Error: No se pudo crear $DEST_DIR"; exit 1; }

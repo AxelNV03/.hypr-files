@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 # Función para buscar archivos por nombre (insensible a mayúsculas)
  # $1 = cadena a buscar, $2 = ruta (opcional, por defecto .)
 searchfile() {
@@ -7,104 +9,93 @@ searchfile() {
 # Crear un Hotspot Wi-Fi
 # $1 = SSID, $2 = contraseña
 red() {    
-    DISPOSITIVO=$(nmcli device status | grep wifi | grep -v disconnected | awk '{print $1}' | head -n 1)
+     DISPOSITIVO=$(nmcli device status | grep wifi | grep -v disconnected | awk '{print $1}' | head -n 1)
 
-    # verifica que no haya argumentos vacíos
-    if [ -z "$1" ] || [ -z "$2" ]; then
-        echo "Uso: red <SSID> <contraseña>"
-        return 1
-    fi
+     # verifica que no haya argumentos vacíos
+     if [ -z "$1" ] || [ -z "$2" ]; then
+          echo "Uso: red <SSID> <contraseña>"
+          return 1
+     fi
 
-    # Reinicia el NetworkManager
-    echo -e "\nReiniciando NetworkManager..."
-    sudo systemctl restart NetworkManager > /dev/null 2>&1 || {
-        echo "Error reiniciando NetworkManager"
-        return 1
-    }
+     # Reinicia el NetworkManager
+     echo -e "\nReiniciando NetworkManager..."
+     sudo systemctl restart NetworkManager > /dev/null 2>&1 || {
+          echo "Error reiniciando NetworkManager"
+          return 1
+     }
 
-    # Espera un momento para asegurarse de que el servicio esté activo
-    sleep 5
+     # Espera un momento para asegurarse de que el servicio esté activo
+     sleep 5
 
-    # Verifica si el dispositivo está conectado a una red Wi-Fi
-    if nmcli device status | grep -q "^$DISPOSITIVO *wifi *conectado"; then
-        echo "Desconectando $DISPOSITIVO..."
-        nmcli device disconnect "$DISPOSITIVO"
-    else
-        echo "$DISPOSITIVO no está conectado."
-    fi
+     # Verifica si el dispositivo está conectado a una red Wi-Fi
+     if nmcli device status | grep -q "^$DISPOSITIVO *wifi *conectado"; then
+          echo "Desconectando $DISPOSITIVO..."
+          nmcli device disconnect "$DISPOSITIVO"
+     else
+          echo "$DISPOSITIVO no está conectado."
+     fi
 
-    sleep 5
+     sleep 5
 
-    # Crea el Hotspot Wi-Fi
-    echo -e "\nCreando Hotspot con SSID '$1'..."
-    nmcli device wifi hotspot ifname "$DISPOSITIVO" band a ssid "$1" password "$2" || {
-        echo "Error creando el hotspot"
-        return 1
-    }
+     # Crea el Hotspot Wi-Fi
+     echo -e "\nCreando Hotspot con SSID '$1'..."
+     nmcli device wifi hotspot ifname "$DISPOSITIVO" band a ssid "$1" password "$2" || {
+          echo "Error creando el hotspot"
+          return 1
+     }
 
-    echo "Hotspot creado correctamente."
+     echo "Hotspot creado correctamente."
 }
 
-# Funcion para cambiar de Rama en Git
-git_rama() {
-  if [ -z "$1" ]; then
-    echo "Uso: git_rama <nombre_de_rama>"
-    return 1
-  fi
-  git checkout "$1"
+# Función para hacer commit en un proyecto Git específico
+gcom() {
+     # 1. Verifica que el directorio actual sea un repositorio de Git.
+     if ! git rev-parse --is-inside-work-tree > /dev/null 2>&1; then
+          echo "❌ Error: No estás en un repositorio de Git."
+          return 1
+     fi
+     
+     # 2. Verifica que se haya pasado un mensaje de commit.
+     if [ -z "$1" ]; then
+          echo "❌ Error: Se necesita un mensaje para el commit."
+          echo "Uso correcto: gcom \"Este es mi mensaje\""
+          return 1
+     fi
+     
+     # 3. Ejecuta los comandos en el directorio actual.
+     echo "📂 Realizando commit en el proyecto actual..."
+     git add -A
+     git commit -m "$1"
+     
+     echo "✅ ¡Commit realizado con éxito!"
 }
 
-# Funcion para crear nueva rama
-git_nueva_rama() {
-  if [ -z "$1" ]; then
-    echo "Uso: git_nueva_rama <nombre_de_rama>"
-    return 1
-  fi
-  git checkout dev
-  git checkout -b "$1"
-  git push -u origin "$1"
-}
 
-# Funcion para hacer merge
-git_merge() {
-  if [ -z "$1" ] || [ -z "$2" ]; then
-    echo "Uso: git_merge <rama_origen> <rama_destino>"
-    return 1
-  fi
-  git checkout "$2" || return 1
-  git merge "$1"
-  if [ $? -eq 0 ]; then
-    git push origin "$2"
-    echo "Merge completado y push realizado."
-  else
-    echo "Hubo conflictos, resuélvelos antes de hacer push."
-  fi
-}
-
-# Commit rápido con mensaje
-git_commit() {
-  if [ -z "$1" ]; then
-    echo "Uso: git_commit <mensaje>"
-    return 1
-  fi
-  git commit -am "$1"
-}
-
-# Commit + push en la rama actual
-git_push() {
-  git add .
-  git commit -m "Auto-commit: $(date '+%Y-%m-%d %H:%M:%S')"
-  git push
-  echo "Push realizado en la rama $(git branch --show-current)."
-}
-
-# Pull de la rama actual
-git_pull() {
-  git pull origin $(git branch --show-current)
-}
-
-# restaurar commit 
-last_commit() {
-  git reset --hard HEAD~1
-  echo "Último commit eliminado y cambios borrados."
+# Función para hacer push en un proyecto Git específico, con opción de commit previo
+# $1 = nombre de la rama, $2 = mensaje de commit opcional
+gpush() {
+     # 1. Verifica que estés en un repositorio de Git.
+     if ! git rev-parse --is-inside-work-tree > /dev/null 2>&1; then
+          echo "❌ Error: No estás en un repositorio de Git."
+          return 1
+     fi
+     
+     # 2. OBTENER EL NOMBRE DE LA RAMA ACTUAL AUTOMÁTICAMENTE.
+     local current_branch=$(git rev-parse --abbrev-ref HEAD)
+     
+     # 3. Si existe un mensaje de commit (AHORA ES $1), llama a gcom.
+     if [ -n "$1" ]; then
+          echo "💬 Mensaje detectado. Haciendo commit primero..."
+          gcom "$1"
+          if [ $? -ne 0 ]; then
+          echo "❌ Error durante el push de la rama $current_branch. Proceso cancelado."
+          return 1
+          fi
+     fi
+     
+     # 4. Ejecuta el push USANDO LA RAMA DETECTADA.
+     echo "🚀 Realizando push a la rama actual ('$current_branch')..."
+     git push origin "$current_branch"
+     
+     echo "✅ ¡Push completado con éxito!"
 }

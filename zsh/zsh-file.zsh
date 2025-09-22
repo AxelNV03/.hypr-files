@@ -13,6 +13,9 @@ source "$HOME/.hypr-files/zsh/alias.zsh"
 # Cargar el archivo de funciones
 source "$HOME/.hypr-files/zsh/functions.zsh"
 
+# Cargar las funciones y alias de estadia.zsh
+source "$HOME/escuela/estadia/estadia.zsh"
+
 # Arranca Starship
 eval "$(starship init zsh)"
 
