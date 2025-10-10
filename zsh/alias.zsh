@@ -18,6 +18,10 @@ alias gl='git --no-pager log --oneline --graph --decorate --all'  # Mejor vista 
 alias c='wl-copy' # Copiar al portapapeles
 alias rl='source ~/.zshrc' # Recargar configuración de zsh
 
+# Composer Docker
+alias dockerDwn='sudo docker compose down'
+alias dockUp='sudo docker compose up -d && sudo docker compose exec app bash'
+
 
 # Solo en thinkpad
 alias winM='sudo mount -t ntfs-3g /dev/nvme0n1p2 /mnt/windows -o uid=$(id -u),gid=$(id -g),umask=000'
