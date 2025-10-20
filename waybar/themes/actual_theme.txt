@@ -1,5 +1,1 @@
-<<<<<<< HEAD
 pacman
-=======
-pacman
->>>>>>> ce7c802 (Arreglado hyprpaper y rofi)
