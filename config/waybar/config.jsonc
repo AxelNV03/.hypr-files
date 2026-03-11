@@ -1,6 +1,6 @@
 {
 "include": [
-    "/home/nv/.dotfiles-hypr/config/waybar/modules"
+    "$HOME/.hypr-files/config/waybar/modules"
 ],
 "layer": "bottom",
 //"mode": "dock",
