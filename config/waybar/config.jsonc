@@ -1,0 +1,43 @@
+{
+"include": [
+    "/home/nv/.dotfiles-hypr/config/waybar/modules"
+],
+"layer": "bottom",
+//"mode": "dock",
+"exclusive": true,
+"passthrough": false,
+"position": "top",
+"spacing": 3,
+"fixed-center": true,
+"ipc": true,
+"margin-top": 3,
+"margin-left": 0,
+"margin-right": 0,
+
+"modules-left": [
+	"clock",
+    "custom/separator#line",
+	"cpu",
+    "memory",
+    "temperature",
+    "disk",
+	],
+
+"modules-center": [
+	"custom/lock",
+	"custom/separator#dot-line",
+	"hyprland/workspaces#kanji",
+	"custom/separator#dot-line",
+	"custom/power",	
+	],
+
+"modules-right": [
+    "battery",
+    "custom/keyboard#state",
+    "pulseaudio",
+    "backlight",
+    "group/notify",
+    "custom/separator#line",
+    "network",
+	],
+}

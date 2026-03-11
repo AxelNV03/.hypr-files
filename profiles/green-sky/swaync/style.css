@@ -1,0 +1,175 @@
+/* ~/.config/swaync/style.css
+ * Variables globales (ajusta los colores a tu tema) */
+@define-color text            #cdd6f4;
+@define-color background-alt  rgba(88, 82, 174, 0.4);
+@define-color selected        #b4befe;
+@define-color hover           rgba(180, 190, 254, 0.25);
+@define-color urgent          #f38ba8;
+
+/* Reset suave */
+* {
+  color: @text;
+  font-size: 14px;
+  font-family: "JetBrains Mono Nerd Font";
+  transition: 200ms;
+}
+
+/* Control-center principal */
+.control-center {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 24px;
+  border: 1px solid @selected;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, .6);
+  margin: 18px;
+  padding: 12px;
+}
+
+/* Notificaciones */
+.notification-row {
+  outline: none;
+  margin-bottom: 8px;          /* ← evita que se encimen */
+}
+
+.control-center .notification-row .notification-background {
+  background-color: rgba(36, 39, 58, 0.85);
+  border: 1px solid @hover;
+  border-radius: 16px;
+  padding: 4px;
+}
+
+.notification-content {
+  margin: 6px;
+}
+
+.notification-action {
+  background: alpha(@selected, .6);
+  border-radius: 12px;
+  margin: 6px;
+}
+
+.notification-action:hover { background: @selected; }
+
+.close-button {
+  background: transparent;
+  border-radius: 6px;
+  margin: 0;
+  padding: 4px;
+}
+
+.close-button:hover { background: @selected; }
+
+/* ---------- WIDGETS ---------- */
+
+/* Título + botón Clear */
+.widget-title {
+  font-size: 1.2em;
+  margin: 6px;
+}
+
+.widget-title button {
+  background: alpha(@background-alt, 0.5);
+  border-radius: 6px;
+  padding: 4px 16px;
+}
+
+.widget-title button:hover { background: @hover; }
+
+/* Do-Not-Disturb switch */
+.widget-dnd {
+  margin: 6px 9px 6px 6px;
+  font-size: 1.2rem;
+}
+
+.widget-dnd > switch {
+  background: alpha(@background-alt, 0.75);
+  border-radius: 8px;
+  min-width: 40px;
+  min-height: 20px;
+  padding: 2px;
+}
+
+.widget-dnd > switch:checked { background: @selected; }
+
+.widget-dnd > switch slider {
+  background: @text;
+  border-radius: 50%;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+/* Botones rápidos */
+.widget-buttons-grid {
+  font-size: x-large;
+  padding: 6px 2px;
+  margin: 6px;
+  border-radius: 12px;
+  background: alpha(@background-alt, 0.5);
+}
+
+.widget-buttons-grid button {
+  margin: 4px 10px;
+  padding: 6px 12px;
+  background: transparent;
+  border-radius: 8px;
+}
+
+.widget-buttons-grid button:hover { background: @hover; }
+
+/* MPRIS: arte arriba, botones abajo */
+.widget-mpris {
+  background: alpha(@background-alt, 0.5);
+  border-radius: 16px;
+  margin: 20px 6px;
+  padding: 6px;
+}
+
+.widget-mpris-player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.widget-mpris > box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.widget-mpris > box > button {   /* prev / play-pause / next */
+  margin-top: 8px;
+}
+
+.widget-mpris-album-art {
+  border-radius: 12px;
+  margin: 6px;
+}
+
+.widget-mpris-title {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.widget-mpris-subtitle {
+  font-weight: 500;
+  font-size: 0.8rem;
+}
+
+/* Volumen / brillo / sliders genéricos */
+.widget-volume,
+.widget-backlight,
+.widget-slider {
+  padding: 8px;
+  margin: 8px;
+  border-radius: 12px;
+}
+
+/* Inhibidores */
+.widget-inhibitors > label {
+  margin: 8px;
+  font-size: 1.5rem;
+}
+
+.widget-inhibitors > button {
+  margin: 8px;
+  border-radius: 12px;
+}

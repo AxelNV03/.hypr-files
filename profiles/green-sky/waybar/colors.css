@@ -1,0 +1,77 @@
+/*
+* Css Colors
+* Generated manually from Matugen (green-sky / DARK)
+*/
+
+@define-color background #0E1513;
+
+@define-color error #FFB4AB;
+@define-color error_container #93000A;
+
+@define-color inverse_on_surface #2B322F;
+@define-color inverse_primary #0A6B5A;
+@define-color inverse_surface #DEE4E0;
+
+@define-color on_background #DEE4E0;
+
+@define-color on_error #690005;
+@define-color on_error_container #FFDAD6;
+
+@define-color on_primary #00382D;
+@define-color on_primary_container #A1F2DC;
+
+@define-color on_primary_fixed #00201A;
+@define-color on_primary_fixed_variant #005143;
+
+@define-color on_secondary #1D352E;
+@define-color on_secondary_container #CDE8DF;
+
+@define-color on_secondary_fixed #07201A;
+@define-color on_secondary_fixed_variant #334B45;
+
+@define-color on_surface #DEE4E0;
+@define-color on_surface_variant #BFC9C4;
+
+@define-color on_tertiary #103447;
+@define-color on_tertiary_container #C7E7FF;
+
+@define-color on_tertiary_fixed #001E2E;
+@define-color on_tertiary_fixed_variant #2A4A5F;
+
+@define-color outline #89938F;
+@define-color outline_variant #3F4945;
+
+@define-color primary #85D6C0;
+@define-color primary_container #005143;
+@define-color primary_fixed #A1F2DC;
+@define-color primary_fixed_dim #85D6C0;
+
+@define-color scrim #000000;
+
+@define-color secondary #B1CCC3;
+@define-color secondary_container #334B45;
+@define-color secondary_fixed #CDE8DF;
+@define-color secondary_fixed_dim #B1CCC3;
+
+@define-color shadow #000000;
+
+@define-color source_color #047C68;
+
+@define-color surface #0E1513;
+@define-color surface_bright #343B38;
+
+@define-color surface_container #1B211F;
+@define-color surface_container_high #252B29;
+@define-color surface_container_highest #303634;
+@define-color surface_container_low #171D1B;
+@define-color surface_container_lowest #090F0E;
+
+@define-color surface_dim #0E1513;
+@define-color surface_tint #85D6C0;
+
+@define-color surface_variant #3F4945;
+
+@define-color tertiary #AACBE3;
+@define-color tertiary_container #2A4A5F;
+@define-color tertiary_fixed #C7E7FF;
+@define-color tertiary_fixed_dim #AACBE3;

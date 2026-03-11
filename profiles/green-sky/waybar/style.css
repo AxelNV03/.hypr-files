@@ -1,0 +1,202 @@
+@import "colors.css";
+
+* {
+  font-family: "JetBrainsMono Nerd Font Propo", "Noto Sans JP";
+  font-weight: bold;
+  min-height: 0;
+  font-size: 98%;
+  font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
+}
+
+window#waybar,
+window#waybar.empty,
+window#waybar.empty #window {
+  background-color: transparent;
+  padding: 0px;
+  border: 0px;
+}
+
+/* Tooltip: arena + tinta oscura, estilo “nubes” del wallpaper */
+tooltip {
+	color: @inverse_surface;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 20px;
+}
+
+tooltip label{
+	color: @inverse_surface;
+}
+
+/* ----- module groups ---- */
+.modules-right,
+.modules-center,
+.modules-left {
+  color: @secondary;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-right: 4px;
+  padding-left: 4px;
+}
+
+/* ----- Workspaces / Taskbar buttons ----- */
+#taskbar button,
+#workspaces button {
+  color: @outline;
+  box-shadow: none;
+  text-shadow: none;
+
+  padding-top: 1px;
+  padding-left: 6px;
+  padding-right: 6px;
+
+  border-radius: 10px;
+  transition: all 0.25s ease;
+}
+
+#taskbar button:hover,
+#workspaces button:hover {
+  color: @secondary;
+  background: rgba(232, 90, 58, 0.18); /* ember hover */
+  border-radius: 16px;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+#taskbar button.active,
+#workspaces button.active {
+  color: @background;
+  background-color: rgba(227, 162, 79, 0.78); /* warm sand */
+  border: 1px solid rgba(241, 190, 142, 0.35);
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#workspaces button.urgent {
+  color: @primary;
+  background: rgba(232, 90, 58, 0.15);
+  border-radius: 10px;
+}
+
+#workspaces button.persistent {
+  border-radius: 10px;
+}
+
+/* Kanji variant (si usas #kanji en config) */
+#workspaces.kanji button {
+  font-family: "JetBrainsMono Nerd Font Propo", "Noto Sans JP";
+}
+
+/* ----- Base “pill glass” for modules ----- */
+#backlight,
+#backlight-slider,
+#battery,
+#bluetooth,
+#clock,
+#cpu,
+#disk,
+#idle_inhibitor,
+#custom-keyboard,
+#memory,
+#mode,
+#mpris,
+#network,
+#power-profiles-daemon,
+#pulseaudio,
+#pulseaudio-slider,
+#taskbar,
+#temperature,
+#tray,
+#window,
+#wireplumber,
+#workspaces,
+#custom-lock,
+#custom-power,
+#custom-swaync,
+#custom-kb {
+  background-color: rgba(15, 47, 43, 0.74);  /* teal glass */
+  border: 1px solid rgba(185, 143, 109, 0.20); /* sand edge */
+  border-radius: 20px;
+
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 14px;
+  padding-left: 14px;
+
+  margin: 0 0 0 5px;
+  transition: all 0.2s ease;
+}
+
+/* Slightly special spacing for swaync (tu estilo original) */
+#custom-swaync {
+  padding-right: 10px;
+  padding-left: 15px;
+}
+
+/* Hover: calidez sutil */
+#backlight:hover,
+#battery:hover,
+#clock:hover,
+#cpu:hover,
+#disk:hover,
+#memory:hover,
+#network:hover,
+#pulseaudio:hover,
+#temperature:hover,
+#custom-lock:hover,
+#custom-power:hover,
+#custom-swaync:hover,
+#custom-kb:hover  {
+  border-color: rgba(241, 190, 142, 0.45);
+  background-color: rgba(20, 66, 60, 0.72); /* brighter teal */
+}
+
+/* ----- Indicators ----- */
+#custom-hypridle.notactive,
+#idle_inhibitor.activated {
+  color: @ok;
+}
+
+#pulseaudio.muted {
+  color: @primary; /* ember */
+}
+
+#temperature.critical {
+  color: @danger;
+}
+
+#battery.critical:not(.charging) {
+  color: @danger;
+}
+
+/* Sliders: mantienen tu estilo pero con colores del tema */
+#backlight-slider slider,
+#pulseaudio-slider slider {
+  min-width: 0px;
+  min-height: 0px;
+  opacity: 0;
+  background-image: none;
+  border: none;
+  box-shadow: none;
+}
+
+#backlight-slider trough,
+#pulseaudio-slider trough {
+  min-width: 80px;
+  min-height: 5px;
+  border-radius: 5px;
+  background: rgba(241, 190, 142, 0.22);
+}
+
+#backlight-slider highlight,
+#pulseaudio-slider highlight {
+  min-height: 10px;
+  border-radius: 5px;
+  background: rgba(227, 162, 79, 0.80);
+}
+
+#custom-kb {
+  min-width: 44px;
+  padding-left: 12px;
+  padding-right: 12px;
+  letter-spacing: 1px;
+}
