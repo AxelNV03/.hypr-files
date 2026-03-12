@@ -79,3 +79,27 @@ red() {
           nmcli device wifi hotspot ifname "$DISPOSITIVO" band bg ssid "$1" password "$2"
      fi
 }
+
+dkinfo() {
+    echo -e "\n\e[1;34m--- CONTAINERS ---\e[0m"
+    docker ps -a
+
+    echo -e "\n\e[1;32m--- IMAGES ---\e[0m"
+    docker images
+
+    echo -e "\n\e[1;33m--- VOLUMES ---\e[0m"
+    docker volume ls
+
+    echo -e "\n\e[1;35m--- NETWORKS (User defined) ---\e[0m"
+
+     # Filtra las redes por defecto (bridge, host, none) y el ID de red para que sea scannable
+     docker network ls | awk '$2 !~ /^(bridge|host|none)$/'
+     echo ""
+}
+
+# 🚪 Entrar a la CLI de MariaDB rápido
+# Uso: dkin mariadb-protecmor
+dkin() {
+    docker exec -it "$1" mariadb -u nava -p
+}
+

@@ -35,7 +35,15 @@ alias gl='git --no-pager log --oneline --graph --decorate --all'
 alias cleanup='sudo pacman -Rns $(pacman -Qtdq)' # Limpiar paquetes huérfanos
 alias fixpacman='sudo rm /var/lib/pacman/db.lck' # Por si se bloquea pacman
 
-# Atajos para archivos de configuración (Edición rápida)
-alias zconf='micro ~/.zshrc'            # Cambia 'micro' por tu editor (nvim, code, etc)
-alias p10conf='micro ~/.p10k.zsh'
-alias hconf='micro ~/.config/hypr/hyprland.conf'
+# docker
+alias dkup='docker compose up -d' # Levantar todo por primera vez o tras cambios
+alias dkdown='docker compose down' # Detener y eliminar contenedores 
+alias dkstart='docker compose start'
+alias dkstop='docker compose stop'
+alias dkls='docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Networks}}"'
+alias dklogs='docker compose logs -f'
+
+
+alias protecmor-bash='docker exec -it protecmor-app bash'
+alias protecmor-start='docker compose -f /home/nv/Proyectos/Docker/mariadb/db-protecmor/docker-compose.yml up -d && docker compose -f /home/nv/Proyectos/protecmor-project/docker-compose.yml up -d'
+alias protecmor-down='docker compose -f /home/nv/Proyectos/protecmor-project/docker-compose.yml down && docker compose -f /home/nv/Proyectos/Docker/mariadb/db-protecmor/docker-compose.yml down'
