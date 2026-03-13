@@ -25,12 +25,12 @@ if ! command -v paru &> /dev/null; then
     echo -e "${YELLOW}⏳ Paru no encontrado. Instalando...${NC}"
     
     # Clonar e instalar en una sola operación
-    if git clone https://aur.archlinux.org/paru-bin.git /tmp/paru-bin; then
+    if git clone https://aur.archlinux.org/paru.git /tmp/paru; then
         (
-            cd /tmp/paru-bin || exit
+            cd /tmp/paru || exit
             makepkg -si --noconfirm
         )
-        rm -rf /tmp/paru-bin
+        rm -rf /tmp/paru
     fi
 
     # --- CLÁUSULA DE SEGURIDAD: Si después del intento no existe, detenemos el script ---
