@@ -109,10 +109,11 @@ PACMAN_PKGS=(
     # --- [ FUENTES E ICONOS ] ---
     "ttf-jetbrains-mono-nerd"  # La reina de la terminal
     "ttf-font-awesome"         # Tus iconos de la Waybar
+    "noto-fonts-cjk"           # Soporte para caracteres chinos/japoneses/coreanos (¡Indispensable!)
     "noto-fonts-emoji"         # Emojis (obligatorio para Slack/Discord/Web)
     "ttf-dejavu"               # Fuente Sans/Serif estándar para la web
     "ttf-liberation"           # Compatibilidad métrica con fuentes de MS
-    
+    "otf-font-awesome"    
 )
 
 echo -e "${BLUE}📦 Iniciando instalación de paquetes...${NC}"
