@@ -1,8 +1,9 @@
 {
 "clock": {
 	"interval": 1,
-    "format": " {:%H:%M:%S, %B %d}",// 24H
-	"format-alt": " {:%H:%M   %Y, %d %B, %A}",
+    // "format": " {:%H:%M:%S, %B %d}",
+	"format": " {:L%H:%M:%S, %B %d}",
+	"format-alt": " {:L%H:%M   %Y, %d %B, %A}",
 	"tooltip-format": "<tt><small>{calendar}</small></tt>",
 	"locale": "es_MX.UTF-8",
 	"calendar": {
@@ -92,9 +93,9 @@
 },
 "custom/keyboard#state": {
   "format": "{}",
-  "exec": "$HOME/.dotfiles-hypr/scripts/sistema/kb.sh",
+  "exec": "$HOME/.hypr-files/scripts/system/kb.sh",
   "interval": 1,
-  "on-click": "$HOME/.dotfiles-hypr/scripts/sistema/kb.sh toggle",
+  "on-click": "$HOME/.hypr-files/scripts/system/kb.sh toggle",
   "tooltip": true,
   "tooltip-format": "Win+Space layout toggle"
 },

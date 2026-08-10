@@ -96,10 +96,3 @@ dkinfo() {
      docker network ls | awk '$2 !~ /^(bridge|host|none)$/'
      echo ""
 }
-
-# 🚪 Entrar a la CLI de MariaDB rápido
-# Uso: dkin mariadb-protecmor
-dkin() {
-    docker exec -it "$1" mariadb -u nava -p
-}
-
