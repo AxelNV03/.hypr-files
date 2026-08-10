@@ -1,0 +1,156 @@
+{
+    // =======================================================================
+    // WORKSPACES — Colección de diseños (selecciona por alias en tu config)
+    // =======================================================================
+    "hyprland/workspaces#kanji": {
+        "disable-scroll": true,
+        "show-special": false,
+        "all-outputs": true,
+        "on-click": "activate",
+        "sort-by": "number",
+        "format": "{icon}",
+        "persistent-workspaces": { "*": 5 },
+        "format-icons": {
+            "1": "一", "2": "二", "3": "三", "4": "四", "5": "五",
+            "6": "六", "7": "七", "8": "八", "9": "九", "10": "十"
+        }
+    },
+
+    "hyprland/workspaces#pacman": {
+        "disable-scroll": true,
+        "show-special": false,
+        "all-outputs": true,
+        "on-click": "activate",
+        "sort-by": "number",
+        "format": "{icon}",
+        "persistent-workspaces": { "1": [], "2": [], "3": [], "4": [], "5": [] },
+        "format-icons": { "active": "󰮯", "default": "󰊠", "persistent": "󰊠" }
+    },
+
+    "hyprland/workspaces#circles": {
+        "format": "",
+        "on-click": "activate",
+        "persistent-workspaces": { "*": 5 }
+    },
+
+    "hyprland/workspaces#numbers_single": {
+        "format": "{icon}",
+        "on-click": "activate",
+        "sort-by": "number",
+        "all-outputs": true,
+        "show-special": true,
+        "special-visible-only": false,
+        "persistent-workspaces": {},
+        "on-scroll-up": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e-1\" })'",
+        "on-scroll-down": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e+1\" })'",
+        "format-icons": {
+            "1": "1", "2": "2", "3": "3", "4": "4", "5": "5",
+            "6": "6", "7": "7", "8": "8", "9": "9", "10": "0",
+            "special": "󰠱", "default": ""
+        }
+    },
+
+    "hyprland/workspaces#numeros": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "on-click": "activate",
+        "format": "{id}",
+        "persistent-workspaces": { "*": 5 }
+    },
+
+    "hyprland/workspaces#point": {
+        "active-only": false,
+        "all-outputs": true,
+        "format": "",
+        "on-click": "activate",
+        "persistent-workspaces": { "*": 5 }
+    },
+
+    "hyprland/workspaces#roman": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "on-click": "activate",
+        "format": "{icon}",
+        "persistent-workspaces": { "*": 5 },
+        "format-icons": {
+            "1": "Ⅰ", "2": "Ⅱ", "3": "Ⅲ", "4": "Ⅳ", "5": "Ⅴ",
+            "6": "Ⅵ", "7": "Ⅶ", "8": "Ⅷ", "9": "Ⅸ", "10": "Ⅹ"
+        }
+    },
+
+    "hyprland/workspaces#retro": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "on-click": "activate",
+        "format": "{icon}",
+        "persistent-workspaces": { "*": 5 },
+        "format-icons": { "active": "👾", "default": "🛸", "persistent": "✨" }
+    },
+
+    "hyprland/workspaces#dots_dynamic": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "on-click": "activate",
+        "format": "{icon}",
+        "persistent-workspaces": { "*": 5 },
+        "format-icons": { "active": "▬", "default": "•", "persistent": "○" }
+    },
+
+    // =======================================================================
+    // CORE DEL COMPOSITOR — Ventanas, submapas, idioma
+    // =======================================================================
+    "hyprland/window": {
+        "format": "{}",
+        "separate-outputs": true,
+        "max-length": 35,
+        "rewrite": {
+            "(.*) — Mozilla Firefox": "󰈹 Firefox",
+            "(.*) - Visual Studio Code": "󰨞 VSCode",
+            "vlc": "󰕼 VLC",
+            "kitty": " Terminal"
+        }
+    },
+
+    "hyprland/submap": {
+        "format": "MODE: {}",
+        "tooltip": false
+    },
+
+    "hyprland/language": {
+        "format": "󰌌 {}",
+        "format-en": "US",
+        "format-es": "LAT",
+        "on-click": "hyprctl switchxkblayout all next",
+        "tooltip": true,
+        "tooltip-format": "Layout: {} | Click para cambiar"
+    },
+
+    // =======================================================================
+    // ACCIONES RÁPIDAS — Bloqueo, apagado, launcher
+    // =======================================================================
+    "custom/lock": {
+        "format": "󰌾",
+        "tooltip": true,
+        "tooltip-format": "Bloquear pantalla",
+        "on-click": "loginctl lock-session || hyprlock"
+    },
+
+    "custom/power": {
+        "format": "⏻",
+        "tooltip": true,
+        "tooltip-format": "Menú de apagado",
+        "on-click": "wlogout -b 4",
+        "on-click-right": "hyprctl dispatch exit"
+    },
+    "custom/arch_logo": {
+        "format": "󰣇",
+        "tooltip-format": "Arch Linux",
+        "on-click": "rofi -show drun" // Mapeado limpio para lanzar tus apps al dar click
+    },
+
+    "custom/cachy_logo": {
+        "format": "",
+        "tooltip-format": "CachyOS",
+        "on-click": "rofi -show drun" // Mapeado limpio para tu entorno basado en Cachy
+    }
+}

@@ -1,0 +1,27 @@
+
+
+# cursor-clip ---> Este dejalo comentado
+
+
+
+    mpv
+    
+        # --- [ FUENTES E ICONOS ] ---
+    "ttf-jetbrains-mono-nerd"  # La reina de la terminal
+    "ttf-font-awesome"         # Tus iconos de la Waybar
+    "noto-fonts-cjk"           # Soporte para caracteres chinos/japoneses/coreanos (¡Indispensable!)
+    "noto-fonts-emoji"         # Emojis (obligatorio para Slack/Discord/Web)
+    "ttf-dejavu"               # Fuente Sans/Serif estándar para la web
+    "ttf-liberation"           # Compatibilidad métrica con fuentes de MS
+    "otf-font-awesome"    
+
+    # --- [ GESTIÓN DE ARCHIVOS Y MULTIMEDIA ] ---
+    "thunar"              # Explorador de archivos
+    "thunar-archive-plugin" # Integración de comprimidos en Thunar
+    "thunar-volman"         # Para que detecte cuando conectas una USB.
+    "tumbler"               # Para miniaturas de fotos en el explorador thunar
+    "ffmpegthumbnailer"     # Miniaturas videos                 
+    "file-roller"         # Gestor visual de archivos comprimidos
+    "gvfs"                # Papelera, montaje de USBs y red en Thunar
+    "gvfs-mtp"
+

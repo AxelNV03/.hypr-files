@@ -1,0 +1,8 @@
+{
+    "custom/start#windows": {
+        "format": "󰖳 Inicio",
+        "tooltip-format": "Menú de aplicaciones",
+        "on-click": "pkill rofi || rofi -show drun",
+        "on-click-right": "rofi -show window"
+    }
+}

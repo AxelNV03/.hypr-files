@@ -1,0 +1,42 @@
+{
+    "include" : [
+        "~/.config/waybar/modules.jsonc"
+    ],
+    "layer": "bottom",
+    "exclusive": true,
+    "passthrough": false,
+    "position": "top",
+    "spacing": 3,
+    "fixed-center": true,
+    "ipc": true,
+    "margin-top": 3,
+    "margin-left": 0,
+    "margin-right": 0,
+
+    
+
+    "modules-left": [
+        "clock#1",
+        "custom/separator#line",
+        "cpu",
+        "memory",
+        "temperature#1",
+        "disk"
+    ],
+    "modules-center": [
+    	"custom/lock",
+	    "custom/separator#dot-line",
+	    "hyprland/workspaces#kanji",
+	    "custom/separator#dot-line",
+	    "custom/power"
+    ],
+    "modules-right": [
+        "battery",
+        "hyprland/language",
+        "pulseaudio",
+        "backlight",
+        "custom/swaync",
+        "custom/separator#line",
+        "network"
+    ]
+}

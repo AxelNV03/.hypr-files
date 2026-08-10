@@ -1,0 +1,68 @@
+{
+    // =======================================================================
+    // CONTROL DE AUDIO
+    // =======================================================================
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "󰂯 {volume}%",
+        "format-muted": "󰝟 MUTED",
+        "format-source": " {volume}%",
+        "format-source-muted": " MUTED",
+        "format-icons": ["", "", ""],
+        "scroll-step": 5,
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-click-right": "pwvucontrol",
+        "tooltip-format": "Salida: {desc} | Vol: {volume}%"
+    },
+    "pulseaudio#microphone": {
+        "format": " {format_source}",
+        "format-source": " {volume}%",
+        "format-source-muted": " MUTED",
+        "scroll-step": 5,
+        "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+        "on-click-right": "pwvucontrol",
+        "tooltip-format": "Entrada: {source_desc} | Vol: {source_volume}%"
+    },
+
+    // =======================================================================
+    // BLUETOOTH
+    // =======================================================================
+    "bluetooth": {
+        "format": "󰂯 ON",
+        "format-disabled": "󰂲 OFF",
+        "format-connected": "󰂯 {num_connections}",
+        "tooltip-format": "Controlador: {status}",
+        "tooltip-format-connected": "Dispositivos conectados:\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "󰂄 {device_alias}\t{device_battery_percentage}%",
+        "on-click-right": "overskride"
+    },
+
+    // =======================================================================
+    // BRILLO DE PANTALLA
+    // =======================================================================
+    "backlight": {
+        "interval": 2,
+        "align": 0,
+        "rotate": 0,
+        "format": "{icon} {percent}%",
+        "format-icons": ["󰃚", "󰃛", "󰃜"],
+        "scroll-step": 5,
+        "tooltip": true,
+        "tooltip-format": "Brillo de pantalla: {percent}%"
+    },
+
+    // =======================================================================
+    // CONECTIVIDAD Y REDES
+    // =======================================================================
+    "network": {
+        "interval": 5,
+        "format-wifi": "{icon} {essid}",
+        "format-ethernet": "󰈀 {ipaddr}",
+        "format-disconnected": "󰤭 DISCONNECTED",
+        "format-alt": "󰛴 {bandwidthUpBytes} 󰛶 {bandwidthDownBytes}",
+        "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+        "tooltip-format-wifi": "Señal: {signalStrength}% | IP: {ipaddr}\nGateway: {gwaddr}",
+        "tooltip-format-ethernet": "Interfaz: {ifname} | IP: {ipaddr}",
+        "on-click-right": "kitty --class waybar-monitor -e nmtui"
+    }
+}

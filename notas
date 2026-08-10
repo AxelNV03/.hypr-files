@@ -1,0 +1,6 @@
+zshrch y rofi usan symlinks, en core no hay nada 
+gtk tiene que enlazarse tambien pero solo lo de design.
+Swaync tambien se tiene que enlazar 
+checar waybar tambien
+
+papirus-folders -C green -t Papirus-Dark

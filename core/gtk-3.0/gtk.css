@@ -1,0 +1,12 @@
+@import url("colors.css");
+
+/* 2. Traducir las variables modernas a GTK3/Thunar */
+@define-color theme_bg_color @window_bg_color;
+@define-color theme_fg_color @window_fg_color;
+@define-color theme_base_color @view_bg_color;
+@define-color theme_text_color @view_fg_color;
+@define-color theme_selected_bg_color @accent_bg_color;
+@define-color theme_selected_fg_color @accent_fg_color;
+
+/* Parche específico para las vistas de carpetas de Thunar */
+@define-color content_view_bg @view_bg_color;

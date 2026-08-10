@@ -1,0 +1,18 @@
+# ~/.gitignore
+# Ignorar archivos temporales y cachés
+.DS_Store
+*.log
+*.tmp
+
+# Ignorar archivos de estado de la VM si se llegan a colar
+.nfs*`
+
+# Ignorar salidas dinámicas de Matugen
+core/matugen/generated/
+core/gtk-3.0/colors.css
+core/gtk-4.0/colors.css
+core/waybar/colors.css
+core/hypr/modules/colors.lua
+core/hypr/modules/animations.lua
+core/hypr/modules/appearance.lua
+core/kitty/colors.conf

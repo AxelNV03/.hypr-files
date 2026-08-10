@@ -1,0 +1,112 @@
+curl 
+wget
+jq
+polkit
+hyprpolkitagent
+base-devel
+hyprsunset
+
+networkmanager
+bluez
+bluez-utils
+dnsmasq
+
+"unrar"               # Extraer .rar
+    "p7zip"               # Soporte .7z
+    "unzip"               # Extraer .zip
+    "zip"                 # Crear .zip
+    "lrzip"               # Soporte Long Range ZIP
+    "lz4"                 # Compresión ultra rápida
+    "lzo"                 # Compresión veloz
+    "cpio"                # Archivador clásico de Unix
+    "unarchiver"          # Extractor universal (el "abre-todo")
+
+
+hyprland
+wayland
+"xorg-xwayland"       # Compatibilidad con apps X11
+    "qt5-wayland"         # Integración Qt5 en Wayland
+    "qt6-wayland"         # Integración Qt6 en Wayland
+    "xdg-utils"           # Herramientas de integración (open URL, etc)
+    "xdg-user-dirs"       # Gestión de carpetas de usuario (Home)
+    "xdg-desktop-portal"  # Backend de comunicación
+    "xdg-desktop-portal-hyprland" # 
+        "rofi-wayland"       # Launcher (decidiste usarlo en lugar de Hyprlauncher)
+"libxkbcommon"        # Manejo avanzado de teclados (normalmente ya viene, pero explícito)
+"xdg-desktop-portal-gtk"      # Portal indispensable para diálogos de archivos y temas visuales
+
+
+yazi
+nvim
+vscode
+greetd
+greetd-tuigreet
+
+# cursor-clip ---> Este dejalo comentado
+cliphist
+wl-clipboard
+wf-recorder
+matugen
+hyprshot
+
+# --- [ AUDIO (Arquitectura Nativa Pipewire) ] ---
+    "pipewire"            # El motor de audio central de baja latencia
+    "pipewire-pulse"      # Servidor de compatibilidad para apps que buscan PulseAudio
+    "pipewire-alsa"       # Soporte para drivers de audio de bajo nivel de ALSA
+    "wireplumber"         # El gestor inteligente de sesiones y políticas de dispositivos
+    "pwvucontrol"         # Mezclador gráfico GTK4 moderno nativo de PipeWire (reemplaza pavucontrol)
+    "easyeffects"         # Procesador de efectos y ecualización para tus perfiles de audio
+    "qpwgraph"            # Patchbay gráfico para enrutar audio dinámicamente entre dispositivos
+    "playerctl"           # Utilidad CLI para controlar reproducciones (Play/Pause/Skip) con keybinds
+
+
+
+    kanshi
+
+    waybar
+    hyprpaper
+    hyprlock
+    hypridle
+    wlogout
+
+
+    kitty
+    zsh
+    "zsh-autosuggestions"         # Sugerencias tipo "fish"
+    "zsh-syntax-highlighting"     # Colores mientras escribes
+    "zsh-history-substring-search"
+        "fastfetch"                   # Info del sistema al abrir terminal
+    htop
+    btop
+    "expac"                       # Necesario para tu alias 'rip' (ver instalados recientes)
+    "fzf"                         # Buscador difuso para el plugin de zsh
+    "pkgfile" # PARA QUE FUNCIONE: source /usr/share/doc/pkgfile/command-not-found.zsh
+
+
+    vim 
+    bitwarden
+    obsidian
+
+    mpv
+    "playerctl"           # Control de medios por teclado
+    "brightnessctl"       # Control de brillo por teclado
+    
+        # --- [ FUENTES E ICONOS ] ---
+    "ttf-jetbrains-mono-nerd"  # La reina de la terminal
+    "ttf-font-awesome"         # Tus iconos de la Waybar
+    "noto-fonts-cjk"           # Soporte para caracteres chinos/japoneses/coreanos (¡Indispensable!)
+    "noto-fonts-emoji"         # Emojis (obligatorio para Slack/Discord/Web)
+    "ttf-dejavu"               # Fuente Sans/Serif estándar para la web
+    "ttf-liberation"           # Compatibilidad métrica con fuentes de MS
+    "otf-font-awesome"    
+
+    # --- [ GESTIÓN DE ARCHIVOS Y MULTIMEDIA ] ---
+    "thunar"              # Explorador de archivos
+    "thunar-archive-plugin" # Integración de comprimidos en Thunar
+    "thunar-volman"         # Para que detecte cuando conectas una USB.
+    "tumbler"               # Para miniaturas de fotos en el explorador thunar
+    "ffmpegthumbnailer"     # Miniaturas videos                 
+    "file-roller"         # Gestor visual de archivos comprimidos
+    "gvfs"                # Papelera, montaje de USBs y red en Thunar
+    "gvfs-mtp"
+

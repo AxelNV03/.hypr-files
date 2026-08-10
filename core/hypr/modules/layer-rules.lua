@@ -1,0 +1,12 @@
+-- =====================================================================
+-- LAYER RULES
+-- See https://wiki.hypr.land/Configuring/Basics/Layer-Rules/
+-- =====================================================================
+
+-- Layer rules also return a handle.
+-- local overlayLayerRule = hl.layer_rule({
+--     name  = "no-anim-overlay",
+--     match = { namespace = "^my-overlay$" },
+--     no_anim = true,
+-- })
+-- overlayLayerRule:set_enabled(false)

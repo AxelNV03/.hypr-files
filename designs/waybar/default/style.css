@@ -1,0 +1,148 @@
+/* =====================================================================
+ *     WAYBAR DEFAULT — Con colores Matugen
+ * ===================================================================== */
+
+@import url("colors.css");
+
+* {
+    font-family: "JetBrainsMono Nerd Font", sans-serif;
+    font-weight: bold;
+    min-height: 0;
+    font-size: 98%;
+}
+
+window#waybar,
+window#waybar.empty,
+window#waybar.empty #window {
+    background-color: transparent;
+    padding: 0px;
+    border: 0px;
+}
+
+tooltip {
+    color: @inverse_surface;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+}
+
+tooltip label {
+    color: @inverse_surface;
+}
+
+.modules-right,
+.modules-center,
+.modules-left {
+    color: @secondary;
+    padding: 2px 4px;
+}
+
+/* ----- Workspaces ----- */
+#workspaces button {
+    color: @outline;
+    box-shadow: none;
+    text-shadow: none;
+    padding: 1px 6px;
+    border-radius: 10px;
+    transition: all 0.25s ease;
+}
+
+#workspaces button:hover {
+    color: @secondary;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+}
+
+#workspaces button.active {
+    color: @background;
+    background-color: @primary;
+    border: 1px solid @primary_container;
+    padding: 1px 10px;
+}
+
+#workspaces button.urgent {
+    color: @primary;
+    background: rgba(255, 0, 0, 0.15);
+    border-radius: 10px;
+}
+
+#workspaces button.persistent {
+    border-radius: 10px;
+}
+
+/* ----- Módulos base ----- */
+#backlight,
+#battery,
+#bluetooth,
+#clock,
+#cpu,
+#disk,
+#memory,
+#network,
+#pulseaudio,
+#temperature,
+#tray,
+#window,
+#workspaces,
+#custom-lock,
+#custom-power,
+#custom-swaync {
+    background-color: @surface_container;
+    border: 1px solid @outline_variant;
+    border-radius: 20px;
+    padding: 5px 14px;
+    margin: 0 0 0 5px;
+    transition: all 0.2s ease;
+}
+
+#custom-swaync {
+    padding-right: 10px;
+    padding-left: 15px;
+}
+
+/* ----- Hover ----- */
+#backlight:hover,
+#battery:hover,
+#clock:hover,
+#cpu:hover,
+#disk:hover,
+#memory:hover,
+#network:hover,
+#pulseaudio:hover,
+#temperature:hover,
+#custom-lock:hover,
+#custom-power:hover,
+#custom-swaync:hover {
+    border-color: @primary;
+    background-color: @surface_container_high;
+}
+
+/* ----- Indicadores ----- */
+#pulseaudio.muted {
+    color: @error;
+}
+
+#temperature.critical {
+    color: @error;
+}
+
+#battery.critical:not(.charging) {
+    color: @error;
+}
+
+/* Agrega #language a las listas de módulos */
+
+/* ----- Módulos base ----- */
+#language {
+    background-color: @surface_container;
+    border: 1px solid @outline_variant;
+    border-radius: 20px;
+    padding: 5px 14px;
+    margin: 0 0 0 5px;
+    transition: all 0.2s ease;
+}
+
+/* ----- Hover ----- */
+#language:hover {
+    border-color: @primary;
+    background-color: @surface_container_high;
+}
