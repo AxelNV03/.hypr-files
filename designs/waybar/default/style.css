@@ -5,10 +5,11 @@
 @import url("colors.css");
 
 * {
-    font-family: "JetBrainsMono Nerd Font", sans-serif;
-    font-weight: bold;
-    min-height: 0;
-    font-size: 98%;
+  font-family: "JetBrainsMono Nerd Font Propo", "Noto Sans JP";
+  font-weight: bold;
+  min-height: 0;
+  font-size: 98%;
+  font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
 }
 
 window#waybar,
@@ -22,7 +23,7 @@ window#waybar.empty #window {
 tooltip {
     color: @inverse_surface;
     background: rgba(0, 0, 0, 0.8);
-    border-radius: 10px;
+    border-radius: 20px;
 }
 
 tooltip label {
@@ -38,30 +39,37 @@ tooltip label {
 
 /* ----- Workspaces ----- */
 #workspaces button {
-    color: @outline;
-    box-shadow: none;
-    text-shadow: none;
-    padding: 1px 6px;
-    border-radius: 10px;
-    transition: all 0.25s ease;
+  color: @outline;
+  box-shadow: none;
+  text-shadow: none;
+
+  padding-top: 1px;
+  padding-left: 6px;
+  padding-right: 6px;
+
+  border-radius: 10px;
+  transition: all 0.25s ease;
 }
 
 #workspaces button:hover {
-    color: @secondary;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
+  color: @secondary;
+  background: rgba(232, 90, 58, 0.18); /* ember hover */
+  border-radius: 16px;
+  padding-left: 6px;
+  padding-right: 6px;
 }
 
 #workspaces button.active {
     color: @background;
     background-color: @primary;
     border: 1px solid @primary_container;
-    padding: 1px 10px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 #workspaces button.urgent {
-    color: @primary;
-    background: rgba(255, 0, 0, 0.15);
+    color: @error;
+    background: rgba(232, 90, 58, 0.15);
     border-radius: 10px;
 }
 
@@ -69,33 +77,41 @@ tooltip label {
     border-radius: 10px;
 }
 
+#workspaces.kanji button {
+  font-family: "JetBrainsMono Nerd Font Propo", "Noto Sans JP";
+}
+
 /* ----- Módulos base ----- */
-#backlight,
-#battery,
-#bluetooth,
 #clock,
 #cpu,
-#disk,
 #memory,
-#network,
-#pulseaudio,
 #temperature,
-#tray,
-#window,
-#workspaces,
+#disk,
 #custom-lock,
+#workspaces,
 #custom-power,
-#custom-swaync {
+#battery,
+#language,
+#pulseaudio,
+#backlight,
+#custom-swaync,
+#network {
     background-color: @surface_container;
     border: 1px solid @outline_variant;
     border-radius: 20px;
-    padding: 5px 14px;
+   
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 14px;
+    padding-left: 14px;
+
     margin: 0 0 0 5px;
     transition: all 0.2s ease;
 }
 
+/* ----- SwayNC (ancho fijo para que no baile) ----- */
 #custom-swaync {
-    padding-right: 10px;
+    padding-right: 15px;
     padding-left: 15px;
 }
 
@@ -105,6 +121,7 @@ tooltip label {
 #clock:hover,
 #cpu:hover,
 #disk:hover,
+#language:hover,
 #memory:hover,
 #network:hover,
 #pulseaudio:hover,
@@ -117,6 +134,11 @@ tooltip label {
 }
 
 /* ----- Indicadores ----- */
+#custom-hypridle.notactive,
+#idle_inhibitor.activated {
+    color: @ok;
+}
+
 #pulseaudio.muted {
     color: @error;
 }
@@ -129,20 +151,35 @@ tooltip label {
     color: @error;
 }
 
-/* Agrega #language a las listas de módulos */
-
-/* ----- Módulos base ----- */
-#language {
-    background-color: @surface_container;
-    border: 1px solid @outline_variant;
-    border-radius: 20px;
-    padding: 5px 14px;
-    margin: 0 0 0 5px;
-    transition: all 0.2s ease;
+/* Sliders: mantienen tu estilo pero con colores del tema */
+#backlight-slider slider,
+#pulseaudio-slider slider {
+  min-width: 0px;
+  min-height: 0px;
+  opacity: 0;
+  background-image: none;
+  border: none;
+  box-shadow: none;
 }
 
-/* ----- Hover ----- */
-#language:hover {
-    border-color: @primary;
-    background-color: @surface_container_high;
+#backlight-slider trough,
+#pulseaudio-slider trough {
+  min-width: 80px;
+  min-height: 5px;
+  border-radius: 5px;
+  background: rgba(241, 190, 142, 0.22);
+}
+
+#backlight-slider highlight,
+#pulseaudio-slider highlight {
+  min-height: 10px;
+  border-radius: 5px;
+  background: rgba(227, 162, 79, 0.80);
+}
+
+#languaje {
+  min-width: 44px;
+  padding-left: 12px;
+  padding-right: 12px;
+  letter-spacing: 1px;
 }

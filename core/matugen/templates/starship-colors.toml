@@ -1,0 +1,119 @@
+format = """
+[](fg:surface)\
+$os\
+$username\
+[](fg:surface bg:accent)\
+$directory\
+[](fg:accent bg:secondary)\
+$git_branch\
+$git_status\
+[](fg:secondary bg:tertiary)\
+$rust\
+$python\
+$nodejs\
+$golang\
+$c\
+[](fg:tertiary bg:primary_fixed)\
+$docker_context\
+[](fg:primary_fixed bg:primary)\
+$time\
+[ ](fg:primary)\
+$line_break$character"""
+
+palette = 'matugen'
+
+[palettes.matugen]
+surface = '{{colors.surface_container.default.hex}}'
+primary = '{{colors.primary.default.hex}}'
+accent = '{{colors.primary_fixed.default.hex}}'
+secondary = '{{colors.secondary.default.hex}}'
+tertiary = '{{colors.tertiary.default.hex}}'
+primary_fixed = '{{colors.primary_fixed_dim.default.hex}}'
+text = '{{colors.on_surface.default.hex}}'
+text_inverse = '{{colors.on_primary.default.hex}}'
+bg = '{{colors.background.default.hex}}'
+error = '{{colors.error.default.hex}}'
+
+[os]
+disabled = false
+style = "bg:surface fg:text"
+
+[os.symbols]
+Arch = "󰣇"
+Ubuntu = "󰕈"
+Fedora = "󰣛"
+Debian = "󰣚"
+Windows = "󰍲"
+
+[username]
+show_always = true
+style_user = "bg:surface fg:text"
+style_root = "bg:surface fg:text"
+format = '[ $user ]($style)'
+
+[directory]
+style = "bg:accent fg:bg"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = "󰝚 "
+"Pictures" = " "
+"Desktop" = " "
+
+[git_branch]
+symbol = ""
+style = "bg:secondary fg:bg"
+format = '[[ $symbol $branch ](bg:secondary fg:bg)]($style)'
+
+[git_status]
+style = "bg:secondary fg:bg"
+format = '[[($all_status$ahead_behind )](bg:secondary fg:bg)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:tertiary fg:bg"
+format = '[[ $symbol( $version) ](bg:tertiary fg:bg)]($style)'
+
+[python]
+symbol = ""
+style = "bg:tertiary fg:bg"
+format = '[[ $symbol( $version) ](bg:tertiary fg:bg)]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:tertiary fg:bg"
+format = '[[ $symbol( $version) ](bg:tertiary fg:bg)]($style)'
+
+[golang]
+symbol = ""
+style = "bg:tertiary fg:bg"
+format = '[[ $symbol( $version) ](bg:tertiary fg:bg)]($style)'
+
+[c]
+symbol = ""
+style = "bg:tertiary fg:bg"
+format = '[[ $symbol( $version) ](bg:tertiary fg:bg)]($style)'
+
+[docker_context]
+symbol = ""
+style = "bg:primary_fixed fg:bg"
+format = '[[ $symbol( $context) ](bg:primary_fixed fg:bg)]($style)'
+
+[time]
+disabled = false
+time_format = "%R"
+style = "bg:primary fg:text_inverse"
+format = '[[  $time ](bg:primary fg:text_inverse)]($style)'
+
+[line_break]
+disabled = false
+
+[character]
+disabled = false
+success_symbol = '[](bold fg:accent)'
+error_symbol = '[](bold fg:error)'
+vimcmd_symbol = '[](bold fg:tertiary)'

@@ -131,14 +131,14 @@
     "custom/lock": {
         "format": "󰌾",
         "tooltip": true,
-        "tooltip-format": "Bloquear pantalla",
+        "tooltip-format": "bloquear pantalla",
         "on-click": "loginctl lock-session || hyprlock"
     },
 
     "custom/power": {
         "format": "⏻",
         "tooltip": true,
-        "tooltip-format": "Menú de apagado",
+        "tooltip-format": "menú de apagado",
         "on-click": "wlogout -b 4",
         "on-click-right": "hyprctl dispatch exit"
     },

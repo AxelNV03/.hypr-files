@@ -16,11 +16,11 @@
     
 
     "modules-left": [
-        "clock#1",
+        "clock",
         "custom/separator#line",
         "cpu",
         "memory",
-        "temperature#1",
+        "temperature",
         "disk"
     ],
     "modules-center": [
