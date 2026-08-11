@@ -57,6 +57,7 @@ PKGS_HYPRLAND_ENV=(
     "wl-clipboard"                # Utilidades wl-copy y wl-paste para scripts
     "wf-recorder"                 # Grabador de pantalla por CLI para wlroots
     "playerctl"                   # Control de reproductores multimedia desde teclado
+    "swaybg"                      # Wallpaper genérico (funciona en VM)
 )
 
 # --- [ 5. AUDIO CON PIPEWIRE ] ---
@@ -123,18 +124,6 @@ PKGS_FILES=(
     "gvfs-mtp"                    # Soporte montaje Android/MTP
     "ncdu"                        # Análisis de uso de disco en terminal
     "tree"                        # Visualización de directorios en árbol
-)
-
-# --- [ 5. PERSONALIZACIÓN VISUAL ] ---
-PKGS_THEMING=(
-    "matugen"                     # Generador de paletas Material You desde wallpaper
-    "lxappearance"                # Configuración de temas GTK
-    "xsettingsd"                  # Demonio de configuración Xsettings
-    "dconf"                       # Sistema de configuración GNOME (temas)
-    "gnome-themes-extra"          # Temas adicionales GTK
-    "papirus-icon-theme"          # Tema de iconos Papirus
-    "nwg-look"                    # Configurador visual de temas GTK para Wayland
-    "adwaita-fonts"               # Fuente Adwaita Sans (requerida por settings.ini)
 )
 # =====================================================================
 #                 UNIFICACIÓN E INSTALACIÓN

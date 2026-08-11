@@ -10,7 +10,6 @@ PARU_SYSTEM=(
     "greetd-tuigreet-git"         # Interfaz TUI para greetd — Login minimalista
     "pwvucontrol"                 # Control de volumen GTK4 nativo para PipeWire
     "wlogout"                     # Menú de apagado/cierre de sesión a pantalla completa
-    "swayosd"                     # OSD (on-screen display) para brillo/volumen estilo GNOME
     "overskride-bin"              # Gestor de Bluetooth moderno para Wayland
     "quickshell-git"              # Shell rápido para widgets y paneles en Hyprland
 )

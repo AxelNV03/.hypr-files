@@ -1,0 +1,17 @@
+[profile]
+name = "default"
+description = "Primera receta de los dotfiles"
+
+[designs]
+fastfetch  = "default"
+gtk-3.0    = "default"
+gtk-4.0    = "default"
+hypr       = "default"
+rofi       = "default"
+starship   = "default"
+swaync     = "default"
+waybar     = "default"
+wlogout    = "default"
+
+[wallpaper]
+path = "wallpapers/green-sky.jpg"

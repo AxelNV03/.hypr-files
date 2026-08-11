@@ -63,7 +63,7 @@ declare -a SCRIPTS=(
     # "$BASE_DIR/03-paru.sh"
     # "$BASE_DIR/04-start_services.sh"
     # "$BASE_DIR/05-battery.sh"  #Solo se ejecuta si es laptop
-    "$BASE_DIR/06-core_config.sh"
+    "$BASE_DIR/07-core_config.sh"
 )
 
 # Solo ejecutar battery si es laptop
@@ -85,6 +85,18 @@ for script in "${SCRIPTS[@]}"; do
         echo -e "${RED}⚠️  Módulo no encontrado: $script${NC}"
     fi
 done
+
+# --- Aplicar perfil default ---
+print_section "Aplicando perfil default"
+
+PROFILE_SCRIPT="$DOTFILES_DIR/installation/apply-profile.sh"
+if [ -f "$PROFILE_SCRIPT" ]; then
+    execute_step "Aplicando perfil default" \
+                 "bash '$PROFILE_SCRIPT' default" \
+                 "Perfil-default"
+else
+    echo -e "${RED}⚠️  apply-profile.sh no encontrado${NC}"
+fi
 
 # --- Resumen final ---
 print_section "Resumen de instalación"

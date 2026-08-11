@@ -36,6 +36,7 @@ PKGS_THEMING=(
     "gnome-themes-extra"          # Temas adicionales GTK
     "papirus-icon-theme"          # Tema de iconos Papirus
     "nwg-look"                    # Configurador visual de temas GTK para Wayland
+    "adwaita-fonts"               # Fuente Adwaita Sans (requerida por settings.ini)
 )
 
 # --- [ 6. MULTIMEDIA Y OCIO ] ---
