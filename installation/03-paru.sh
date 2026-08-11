@@ -12,6 +12,8 @@ PARU_SYSTEM=(
     "wlogout"                     # Menú de apagado/cierre de sesión a pantalla completa
     "overskride-bin"              # Gestor de Bluetooth moderno para Wayland
     "quickshell-git"              # Shell rápido para widgets y paneles en Hyprland
+    "oh-my-zsh-git"
+
 )
 
 # Temas y personalización visual
