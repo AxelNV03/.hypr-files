@@ -9,7 +9,6 @@
   font-weight: bold;
   min-height: 0;
   font-size: 98%;
-  font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
 }
 
 window#waybar,
@@ -22,7 +21,7 @@ window#waybar.empty #window {
 
 tooltip {
     color: @inverse_surface;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.18);
     border-radius: 20px;
 }
 
@@ -96,8 +95,8 @@ tooltip label {
 #backlight,
 #custom-swaync,
 #network {
-    background-color: @surface_container;
-    border: 1px solid @outline_variant;
+    background-color: alpha(@surface_container, 0.70);
+    border: 1px solid alpha(@outline_variant, 1.0);
     border-radius: 20px;
    
     padding-top: 5px;

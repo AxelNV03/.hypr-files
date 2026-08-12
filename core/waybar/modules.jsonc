@@ -1,9 +1,1 @@
-{
-    "include": [
-        "~/.hyprland-dotfiles/core/waybar/modules/sistema.jsonc",
-        "~/.hyprland-dotfiles/core/waybar/modules/hardware.jsonc",
-        "~/.hyprland-dotfiles/core/waybar/modules/compositor.jsonc",
-        "~/.hyprland-dotfiles/core/waybar/modules/utilidades.jsonc",
-        "~/.hyprland-dotfiles/core/waybar/modules/custom.jsonc"
-    ]
-}
+../../designs/waybar/default/modules.jsonc

@@ -47,6 +47,8 @@ hl.bind(mainMod .. " + ALT + down",  hl.dsp.exec_cmd("playerctl play-pause"))
 -- ---------------------------------------------------------------------
 -- Capturas de pantalla (Grimblast)
 -- ---------------------------------------------------------------------
+hl.bind("Print", hl.dsp.exec_cmd("hyprshot -m region"))
+hl.bind(mainMod .. " + Print",  hl.dsp.exec_cmd("hyprshot-gui"))
 
 -- ---------------------------------------------------------------------
 -- Navegacion

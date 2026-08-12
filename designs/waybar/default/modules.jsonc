@@ -34,7 +34,7 @@
         "interval": 1,
         // "format": "󰃭 {:L%A %H:%M}",
         "format": " {:L%H:%M:%S, %B %d}",
-        "format-alt": " {:L%H:%M   %Y, %d %B, %A}",
+        "format-alt": " {:L%H:%M,  %A %d %B %Y }",
         "tooltip-format": "{calendar}",
         "locale": "es_MX.UTF-8",
         "calendar": {
@@ -91,7 +91,7 @@
         "format": "󰌾",
         "tooltip": true,
         "tooltip-format": "bloquear pantalla",
-        "on-click": "loginctl lock-session || hyprlock"
+        "on-click": "hyprlock"
     },
 
     "custom/power": {
@@ -99,7 +99,7 @@
         "tooltip": true,
         "tooltip-format": "menú de apagado",
         "on-click": "wlogout -b 4",
-        "on-click-right": "hyprctl dispatch exit"
+        "on-click-right": "hyprctl dispatch exit 2>/dev/null || pkill Hyprland"
     },
     // =======================================================================
     // MODULOS DERECHA
@@ -150,7 +150,7 @@
         "align": 0,
         "rotate": 0,
         "format": "{icon} {percent}%",
-        "format-icons": ["󰃚", "󰃛", "󰃜"],
+        "format-icons": ["󰃜", "󰃛", "󰃚"],
         "scroll-step": 5,
         "tooltip": true,
         "tooltip-format": "Brillo de pantalla: {percent}%"
