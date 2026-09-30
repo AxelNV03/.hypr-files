@@ -11,8 +11,8 @@ DOTFILES_DIR="${DOTFILES_DIR:-$HOME/.hypr-files}"
 DESIGNS_SRC="$DOTFILES_DIR/designs"
 DESTINO="$HOME/.config"
 
-APP="$1"
-DESIGN="$2"
+APP="${1:-}"
+DESIGN="${2:-}"
 
 if [ -z "$APP" ] || [ -z "$DESIGN" ]; then
     echo "❌ Uso: swap-design.sh <app> <diseño>" >&2
@@ -22,19 +22,19 @@ fi
 # Verificar que el diseño existe según el tipo de app
 case "$APP" in
     hyprlock)
-        [ ! -f "$DESIGNS_SRC/hyprlock/$DESIGN.conf" ] && {
+        [ -f "$DESIGNS_SRC/hyprlock/$DESIGN.conf" ] || {
             echo "❌ No existe $DESIGNS_SRC/hyprlock/$DESIGN.conf" >&2
             exit 1
         }
         ;;
     starship)
-        [ ! -f "$DESIGNS_SRC/starship/$DESIGN.toml" ] && {
+        [ -f "$DESIGNS_SRC/starship/$DESIGN.toml" ] || {
             echo "❌ No existe $DESIGNS_SRC/starship/$DESIGN.toml" >&2
             exit 1
         }
         ;;
     *)
-        [ ! -d "$DESIGNS_SRC/$APP/$DESIGN" ] && {
+        [ -d "$DESIGNS_SRC/$APP/$DESIGN" ] || {
             echo "❌ No existe $DESIGNS_SRC/$APP/$DESIGN" >&2
             exit 1
         }

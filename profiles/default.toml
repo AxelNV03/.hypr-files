@@ -13,4 +13,5 @@ waybar     = "default"
 wlogout    = "default"
 
 [wallpaper]
-path = "wallpapers/122252287_p0.jpg"
+path = "wp21"
+prefer = "darkness"

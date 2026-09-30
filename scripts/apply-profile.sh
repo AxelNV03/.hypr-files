@@ -7,7 +7,7 @@
 set -euo pipefail
 
 DOTFILES_DIR="${DOTFILES_DIR:-$HOME/.hypr-files}"
-PROFILE="$1"
+PROFILE="${1:-}"
 
 if [ -z "$PROFILE" ]; then
     echo "❌ Uso: apply-profile.sh <perfil>" >&2
@@ -43,34 +43,23 @@ for app in "${APPS_DESIGN[@]}"; do
     DESIGN=$(get_toml_value "$app")
     [ -z "$DESIGN" ] && continue
 
-    if ! bash "$SWAP_SCRIPT" "$app" "$DESIGN" 2>/dev/null; then
+    if ! bash "$SWAP_SCRIPT" "$app" "$DESIGN"; then
         echo "❌ $app → $DESIGN falló" >&2
-        ((ERRORS++))
+        ERRORS=$((ERRORS + 1))
     fi
 done
 
 # Wallpaper + matugen
 WALLPAPER=$(get_toml_value "path")
-if [ -n "$WALLPAPER" ] && [ -f "$DOTFILES_DIR/$WALLPAPER" ]; then
-    EXT="${WALLPAPER##*.}"
-    
-    # 1. Borrar wallpaper anterior
-    rm -f "$HOME/.config"/wallpaper.* 2>/dev/null
-    
-    # 2. Copiar nuevo
-    cp "$DOTFILES_DIR/$WALLPAPER" "$HOME/.config/wallpaper.$EXT"
-    
-    # 3. Recargar Hyprland
-    hyprctl reload 2>/dev/null || true
-    
-    # 4. Reiniciar hyprpaper
-    pkill hyprpaper 2>/dev/null || true
-    sleep 0.3
-    hyprpaper -c "$HOME/.config/hypr/hyprpaper.conf" &>/dev/null &
-    disown
-    
-    # 5. Generar colores
-    command -v matugen &>/dev/null && matugen image "$HOME/.config/wallpaper.$EXT" --source-color-index 0
+PREFER=$(get_toml_value "prefer")
+
+if [ -n "$WALLPAPER" ]; then
+    if ! bash "$DOTFILES_DIR/scripts/change-wallpaper.sh" "$WALLPAPER" "$PREFER"; then
+        echo "❌ Wallpaper falló" >&2
+        ERRORS=$((ERRORS + 1))
+    fi
 fi
+
+
 
 exit $ERRORS

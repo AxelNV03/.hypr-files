@@ -1,6 +1,4 @@
-[config.wallpaper]
-command = "hyprctl hyprpaper wallpaper ,{{ image }}"
-set = true
+[config]
 
 [templates.hyprland]
 input_path = '~/.config/matugen/templates/hyprland-colors.lua'
@@ -10,7 +8,6 @@ post_hook = 'hyprctl reload'
 [templates.gtk3]
 input_path = '~/.config/matugen/templates/gtk.css'
 output_path = '~/.config/gtk-3.0/colors.css'
-post_hook = 'gsettings set org.gnome.desktop.interface gtk-theme ""; gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-{{mode}}'
 
 [templates.gtk4]
 input_path = '~/.config/matugen/templates/gtk.css'
@@ -19,7 +16,7 @@ output_path = '~/.config/gtk-4.0/colors.css'
 [templates.kitty]
 input_path = '~/.config/matugen/templates/kitty-colors.conf'
 output_path = '~/.config/kitty/colors.conf'
-# post_hook = "kitty +kitten themes --reload-in=all Matugen"
+post_hook = "kitty @ set-colors --all --configured ~/.config/kitty/colors.conf"
 
 [templates.rofi]
 input_path = '~/.config/matugen/templates/rofi-colors.rasi'
@@ -28,7 +25,7 @@ output_path = '~/.config/rofi/colors.rasi'
 [templates.waybar]
 input_path = '~/.config/matugen/templates/waybar-colors.css'
 output_path = '~/.config/waybar/colors.css'
-post_hook = 'pkill -SIGUSR2 waybar'
+post_hook = 'pkill -SIGUSR2 waybar || (waybar &>/dev/null &)'
 
 [templates.swaync]
 input_path = "~/.config/matugen/templates/swaync-colors.css"
