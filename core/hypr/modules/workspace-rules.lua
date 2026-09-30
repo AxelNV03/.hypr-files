@@ -19,5 +19,5 @@
 -- })
 
 -- Tu combo dwindle + scrolling que armamos antes
-hl.workspace_rule({ workspace = "1", layout = "scrolling" })
+hl.workspace_rule({ workspace = "1", layout = "dwindle" })
 hl.workspace_rule({ workspace = "2", layout = "dwindle" })

@@ -4,9 +4,8 @@ description = "Primera receta de los dotfiles"
 
 [designs]
 fastfetch  = "default"
-gtk-3.0    = "default"
-gtk-4.0    = "default"
 hypr       = "default"
+hyprlock   = "default"
 rofi       = "default"
 starship   = "default"
 swaync     = "default"
@@ -14,4 +13,4 @@ waybar     = "default"
 wlogout    = "default"
 
 [wallpaper]
-path = "wallpapers/green-sky.jpg"
+path = "wallpapers/122252287_p0.jpg"

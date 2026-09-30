@@ -18,12 +18,13 @@ hl.bind(mainMod .. " + D",         hl.dsp.exec_cmd(menu))              -- Menu d
 hl.bind(mainMod .. " + B",         hl.dsp.exec_cmd(browser))           -- Navegador
 hl.bind(mainMod .. " + C",         hl.dsp.exec_cmd(ide))               -- IDE
 hl.bind(mainMod .. " + SHIFT + P", hl.dsp.exec_cmd(novelas))           -- Novelas Visuales
+hl.bind(mainMod .. " + SHIFT + C", hl.dsp.exec_cmd(celular))           -- Telefono
 
 -- Gestor de las ventanas
 hl.bind(mainMod .. " + F",         hl.dsp.window.fullscreen({ mode = 1 }))         -- Fullscreen Ventana
 hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.fullscreen_state({ internal = 0, client = 2, action = "toggle" })) -- Fullscreen App
 hl.bind(mainMod .. " + J",         hl.dsp.layout("togglesplit"))                   -- Togglesplit
--- hl.bind(mainMod .. " + L",         hl.dsp.exec_cmd("hyprlock"))                    -- Hyprlock
+hl.bind(mainMod .. " + L",         hl.dsp.exec_cmd("hyprlock"))                    -- Hyprlock
 hl.bind(mainMod .. " + P",         hl.dsp.window.pin())     -- Pin a ventana | Tab para ciclar ventanas
 hl.bind(mainMod .. " + Tab", function()
   local win = hl.get_active_window()
@@ -49,6 +50,10 @@ hl.bind(mainMod .. " + ALT + down",  hl.dsp.exec_cmd("playerctl play-pause"))
 -- ---------------------------------------------------------------------
 hl.bind("Print", hl.dsp.exec_cmd("hyprshot -m region"))
 hl.bind(mainMod .. " + Print",  hl.dsp.exec_cmd("hyprshot-gui"))
+
+-- Presionar Super + D para activar/desactivar dictado
+hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("nerd-dictation begin"))
+hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd("nerd-dictation end"))
 
 -- ---------------------------------------------------------------------
 -- Navegacion

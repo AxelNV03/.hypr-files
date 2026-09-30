@@ -1,0 +1,69 @@
+/* =====================================================================
+ *     PANEL DE DISEÑOS — Estilo base
+ * ===================================================================== */
+
+window {
+    background-color: #1e1e2e;
+    color: #cdd6f4;
+    border-radius: 16px;   /* ← Esto se nota */
+}
+
+notebook {
+    background-color: transparent;
+}
+
+notebook > header {
+    background-color: #181825;
+    border-bottom: 1px solid #313244;
+}
+
+notebook > header > tabs > tab {
+    padding: 8px 16px;
+    color: #6c7086;
+    font-weight: bold;
+}
+
+notebook > header > tabs > tab:checked {
+    color: #cdd6f4;
+    background-color: #313244;
+    border-radius: 8px;
+}
+
+box {
+    padding: 12px;
+}
+
+label {
+    font-family: "JetBrainsMono Nerd Font";
+}
+
+button {
+    background-color: #313244;
+    color: #cdd6f4;
+    border: 1px solid #45475a;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #45475a;
+}
+
+button:active {
+    background-color: #585b70;
+}
+
+dropdown {
+    background-color: #313244;
+    border-radius: 8px;
+    padding: 4px;
+}
+
+entry {
+    background-color: #181825;
+    color: #cdd6f4;
+    border: 1px solid #45475a;
+    border-radius: 8px;
+    padding: 8px;
+}

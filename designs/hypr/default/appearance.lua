@@ -6,14 +6,14 @@ local color = require("modules/colors")
 hl.config({
     general = {
         gaps_in  = 1,
-        gaps_out = 4,0,0,0,
+        gaps_out = 4,
         border_size = 2,
         col = {
             active_border = {
-                colors = { color.primary, color.secondary },
+                colors = { color.primary, color.tertiary },
                 angle = 45,
             },
-            inactive_border = color.on_primary,
+            inactive_border = { colors = { color.error }}
         },
     },
     decoration = {
@@ -36,4 +36,3 @@ hl.config({
     },
     animations = { enabled = true },
 })
-

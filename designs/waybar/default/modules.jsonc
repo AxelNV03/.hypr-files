@@ -4,10 +4,9 @@
     // =======================================================================
     "hyprland/workspaces#kanji": {
         "disable-scroll": true,
-        "show-special": false,
+        "show-special": true,
         "all-outputs": true,
         "on-click": "activate",
-        "sort-by": "number",
         "format": "{icon}",
         "persistent-workspaces": { "*": 5 },
         "format-icons": {
@@ -182,7 +181,7 @@
         "interval": 5,
         "format-wifi": "{icon} {essid}",
         "format-ethernet": "󰈀 {ipaddr}",
-        "format-disconnected": "󰤭 DISCONNECTED",
+        "format-disconnected": "󰤭 ",
         "format-alt": "󰛴 {bandwidthUpBytes} 󰛶 {bandwidthDownBytes}",
         "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
         "tooltip-format-wifi": "Señal: {signalStrength}% | IP: {ipaddr}\nGateway: {gwaddr}",
