@@ -33,26 +33,29 @@ fi
 EXT="${TARGET_FILE##*.}"
 
 # 1. Borrar wallpaper anterior y copiar el nuevo
-rm -f "$HOME/.config"/wallpaper.* 2>/dev/null || true
+rm -f "$HOME/.config"/wallpaper.* "$HOME/.config/wallpaper" 2>/dev/null || true
 cp "$TARGET_FILE" "$HOME/.config/wallpaper.$EXT"
-echo "✅ Wallpaper: $(basename "$TARGET_FILE") → ~/.config/wallpaper.$EXT"
 
-# 2. Reiniciar hyprpaper
+# 2. Crear symlink sin extensión (para hyprpaper y env.lua)
+ln -sf "$HOME/.config/wallpaper.$EXT" "$HOME/.config/wallpaper"
+
+echo "✅ Wallpaper: $(basename "$TARGET_FILE") → ~/.config/wallpaper"
+
+# 3. Reiniciar hyprpaper (sin hyprctl reload, sin sleep)
 pkill hyprpaper 2>/dev/null || true
 sleep 0.3
 hyprpaper -c "$HOME/.config/hypr/hyprpaper.conf" &>/dev/null &
 disown
 echo "✅ Hyprpaper reiniciado"
 
-# 3. Generar colores
+# 4. Generar colores
 if command -v matugen &>/dev/null; then
     if [ -n "$PREFER" ]; then
-        matugen image "$HOME/.config/wallpaper.$EXT" --prefer "$PREFER"
-        echo "✅ Colores regenerados (prefer: $PREFER)"
+        matugen image "$HOME/.config/wallpaper" --prefer "$PREFER"
     else
-        matugen image "$HOME/.config/wallpaper.$EXT" --prefer darkness
-        echo "✅ Colores regenerados"
+        matugen image "$HOME/.config/wallpaper" --prefer darkness
     fi
+    echo "✅ Colores regenerados"
 fi
 # matugen image wallpaper.jpg --prefer {{ SCHEMA }}
 # --prefer darkness	El color más oscuro

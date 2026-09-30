@@ -26,3 +26,6 @@ source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring
 source /usr/share/doc/pkgfile/command-not-found.zsh
 
 export FZF_BASE=/usr/share/fzf
+
+# zoxide — cd inteligente
+eval "$(zoxide init zsh)"

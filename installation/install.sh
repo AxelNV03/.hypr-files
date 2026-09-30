@@ -74,12 +74,12 @@ declare -a SCRIPTS=(
     # "$MODULES_DIR/04-personal_packages.sh"
 )
 
-if $IS_LAPTOP; then
-    SCRIPTS+=("$MODULES_DIR/05-laptop.sh")
-fi
+# if $IS_LAPTOP; then
+#     SCRIPTS+=("$MODULES_DIR/05-laptop.sh")
+# fi
 
 SCRIPTS+=(
-    "$MODULES_DIR/06-start_services.sh"
+    # "$MODULES_DIR/06-start_services.sh"
     "$MODULES_DIR/07-core_config.sh"
 )
 
