@@ -16,3 +16,9 @@ core/hypr/modules/colors.lua
 core/hypr/modules/animations.lua
 core/hypr/modules/appearance.lua
 core/kitty/colors.conf
+# Ignorar compilaciones de Rust
+target/
+**/target/
+
+# Ignorar Cargo.lock (opcional, algunos prefieren trackearlo)
+# Cargo.lock
